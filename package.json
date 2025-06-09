@@ -1,11 +1,35 @@
 {
-  "name": "edelweiss-prototype",
-  "type": "module",
-  "private": true,
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
-  }
+    "name": "edelweiss-prototype",
+    "description": "A prototype for the Edelweiss project using SvelteKit and Tailwind CSS",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "author": "Fiki Pratama <fikiproductionofficial@gmail.com> (https://github.com/nsmle/)",
+    "repository": "github:nsmle/edelweiss-prototype",
+    "license": "GPL-3.0-only",
+    "scripts": {
+        "dev": "vite dev",
+        "build": "vite build",
+        "preview": "vite preview",
+        "prepare": "svelte-kit sync || echo ''",
+        "format": "prettier --write .",
+        "format:check": "prettier --check ."
+    },
+    "devDependencies": {
+        "@types/bun": "latest",
+        "husky": "^9.1.7",
+        "@sveltejs/kit": "^2.21.3",
+        "@sveltejs/vite-plugin-svelte": "^5.1.0",
+        "@tailwindcss/vite": "^4.1.8",
+        "prettier": "^3.5.3",
+        "prettier-plugin-svelte": "^3.4.0",
+        "prettier-plugin-tailwindcss": "^0.6.12",
+        "svelte": "^5.33.18",
+        "tailwindcss": "^4.1.8",
+        "vite": "^6.3.5"
+    },
+    "peerDependencies": {
+        "typescript": "^5"
+    },
+    "dependencies": {}
 }
