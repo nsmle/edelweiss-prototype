@@ -31,5 +31,7 @@
     "peerDependencies": {
         "typescript": "^5"
     },
-    "dependencies": {}
+    "dependencies": {
+        "@sveltejs/adapter-vercel": "^5.7.2"
+    }
 }
