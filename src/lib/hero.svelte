@@ -1,5 +1,7 @@
-<div class="relative isolate mx-auto max-w-7xl px-4 pt-20 sm:px-8 sm:pt-28">
-    <div class="bg-image relative isolate h-[40vh] rounded-2xl py-48 sm:h-[70vh] sm:rounded-2xl">
+<div class="relative isolate mx-auto max-w-7xl px-4 pt-22 sm:px-8 sm:pt-28">
+    <div
+        class="bg-image relative isolate h-[40vh] rounded-2xl py-48 sm:rounded-2xl md:h-[80vh] lg:h-[80vh] xl:h-[65vh] 2xl:h-[35vh]"
+    >
         <div
             class="overlay absolute inset-x-0 top-0 -z-10 min-h-full transform-gpu rounded-2xl"
             aria-hidden="true"
@@ -30,7 +32,7 @@
             </div>
         </div>
         <div
-            class="z-20 mt-8 flex h-fit flex-col rounded-2xl bg-white px-1 py-4 shadow-2xl shadow-blue-800/10 sm:mt-12 sm:flex-row sm:rounded-3xl sm:px-8"
+            class="z-20 mt-8 flex h-fit flex-col rounded-2xl bg-white px-2 py-4 shadow-2xl shadow-blue-800/10 sm:mt-12 sm:flex-row sm:rounded-3xl sm:px-8"
         >
             <div class="flex w-full flex-col items-center justify-between gap-1.5 px-2 sm:flex-row sm:gap-0 sm:px-6">
                 <button
@@ -73,7 +75,7 @@
             <div class="px-1 pt-4 sm:ml-12 sm:flex sm:items-center sm:p-0">
                 <button
                     type="button"
-                    class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-gradient-to-br from-green-400 via-green-500 to-green-500 py-2 text-white shadow-lg shadow-blue-800/10 sm:w-auto sm:p-4"
+                    class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-gradient-to-br from-green-400 via-green-500 to-green-500 py-2 text-white shadow-lg shadow-blue-800/10 sm:w-auto sm:rounded-full sm:p-4"
                     aria-label="Search"
                     aria-describedby="search-button"
                 >

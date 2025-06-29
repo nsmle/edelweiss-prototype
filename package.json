@@ -16,15 +16,16 @@
         "format:check": "prettier --check ."
     },
     "devDependencies": {
-        "@types/bun": "latest",
-        "husky": "^9.1.7",
         "@sveltejs/kit": "^2.21.3",
         "@sveltejs/vite-plugin-svelte": "^5.1.0",
         "@tailwindcss/vite": "^4.1.8",
+        "@types/bun": "latest",
+        "husky": "^9.1.7",
         "prettier": "^3.5.3",
         "prettier-plugin-svelte": "^3.4.0",
         "prettier-plugin-tailwindcss": "^0.6.12",
         "svelte": "^5.33.18",
+        "svelte-adapter-bun": "^0.5.2",
         "tailwindcss": "^4.1.8",
         "vite": "^6.3.5"
     },

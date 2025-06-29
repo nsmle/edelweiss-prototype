@@ -1,4 +1,6 @@
-import adapter from '@sveltejs/adapter-vercel';
+import vercelAdapter from '@sveltejs/adapter-vercel';
+import bunAdapter from 'svelte-adapter-bun';
+
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -11,9 +13,11 @@ const config = {
         // adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.
         // If your environment is not supported, or you settled on a specific environment, switch out the adapter.
         // See https://svelte.dev/docs/kit/adapters for more information about adapters.
-        adapter: adapter({
-            runtime: 'edge'
-        })
+        adapter: Boolean(process.env.VERCEL || 0)
+            ? vercelAdapter({
+                  runtime: 'edge'
+              })
+            : bunAdapter()
     }
 };
 
