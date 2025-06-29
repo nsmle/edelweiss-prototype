@@ -1,2 +1,9 @@
-<h1 class="bg-red-400 text-center">Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script lang="ts">
+    import Hero from '$lib/hero.svelte';
+</script>
+
+<svelte:head>
+    <title>Edelweiss Photobooth | Ciptakan moment, abadikan kenangan</title>
+</svelte:head>
+
+<Hero />

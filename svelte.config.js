@@ -12,7 +12,7 @@ const config = {
         // If your environment is not supported, or you settled on a specific environment, switch out the adapter.
         // See https://svelte.dev/docs/kit/adapters for more information about adapters.
         adapter: adapter({
-            // see below for options that can be set here
+            runtime: 'edge'
         })
     }
 };

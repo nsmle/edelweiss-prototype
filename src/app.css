@@ -1,1 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import 'tailwindcss';
+
+:root {
+    --acme-canvas-color: oklch(99.135% 0.00143 285.193);
+}
+[data-theme='dark'] {
+    --acme-canvas-color: oklch(0.21 0.034 264.665);
+}
+
+@theme inline {
+    --color-canvas: var(--acme-canvas-color);
+
+    --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+    --default-font-family: 'DM Sans', sans-serif;
+    --font-display: 'Poppins', sans-serif;
+    --font-poppins: 'Poppins', sans-serif;
+    --font-inter: 'Inter', sans-serif;
+
+    --color-primary-50: #f3fbf2;
+    --color-primary-100: #e3f8e0;
+    --color-primary-200: #c7f0c2;
+    --color-primary-300: #99e392;
+    --color-primary-400: #64cd5b;
+    --color-primary-500: #4ac63f;
+    --color-primary-600: #2f9326;
+    --color-primary-700: #277421;
+    --color-primary-800: #235c1f;
+    --color-primary-900: #1d4c1b;
+    --color-primary-950: #0b290a;
+
+    --color-primary-saffron-50: #fefbe8;
+    --color-primary-saffron-100: #fdf7c4;
+    --color-primary-saffron-200: #fceb8c;
+    --color-primary-saffron-300: #f9d94b;
+    --color-primary-saffron-400: #f6c92d;
+    --color-primary-saffron-500: #e5ac0d;
+    --color-primary-saffron-600: #c68508;
+    --color-primary-saffron-700: #9e5e0a;
+    --color-primary-saffron-800: #824a11;
+    --color-primary-saffron-900: #6f3d14;
+    --color-primary-saffron-950: #411f07;
+
+    --color-primary-lavender-50: #fff4fe;
+    --color-primary-lavender-100: #ffe7fd;
+    --color-primary-lavender-200: #ffcffa;
+    --color-primary-lavender-300: #fea9f1;
+    --color-primary-lavender-400: #fd7fe9;
+    --color-primary-lavender-500: #f441d7;
+    --color-primary-lavender-600: #d821b7;
+    --color-primary-lavender-700: #b31893;
+    --color-primary-lavender-800: #931578;
+    --color-primary-lavender-900: #781762;
+    --color-primary-lavender-950: #50023d;
+
+    --color-primary-blue-50: #eff7ff;
+    --color-primary-blue-100: #daedff;
+    --color-primary-blue-200: #bee0ff;
+    --color-primary-blue-300: #91cdff;
+    --color-primary-blue-400: #62b3fd;
+    --color-primary-blue-500: #3790fa;
+    --color-primary-blue-600: #2171ef;
+    --color-primary-blue-700: #195bdc;
+    --color-primary-blue-800: #1b4ab2;
+    --color-primary-blue-900: #1c418c;
+    --color-primary-blue-950: #162955;
+}
+
+html {
+    font-family: var(--default-font-family);
+    color: var(--color-alabaster-900);
+    background-color: var(--color-canvas);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--default-font-family);
+    color: var(--color-alabaster-900);
+    background-color: var(--color-canvas);
+}
