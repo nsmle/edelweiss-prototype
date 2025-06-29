@@ -1,10 +1,12 @@
 <script lang="ts">
     import { page } from '$app/state';
     import Header from '$lib/header.svelte';
+    import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
     import '../app.css';
 
     let props = $props();
     let { children } = props;
+    injectSpeedInsights();
 </script>
 
 <svelte:head>
