@@ -21,6 +21,8 @@
     --font-poppins: 'Poppins', sans-serif;
     --font-inter: 'Inter', sans-serif;
 
+    --color-clean-500: oklch(99.135% 0.00143 285.193);
+
     --color-primary-50: #f3fbf2;
     --color-primary-100: #e3f8e0;
     --color-primary-200: #c7f0c2;
@@ -68,28 +70,6 @@
     --color-primary-blue-800: #1b4ab2;
     --color-primary-blue-900: #1c418c;
     --color-primary-blue-950: #162955;
-    /* Tailwind CSS v4.1 safelist example */
-    /* Add this to ensure Tailwind includes these classes in the build */
-    /* 
-    @tailwindcss safelist start
-    bg-service-1
-    bg-service-2
-    bg-service-3
-    bg-service-4
-    bg-service-5
-    bg-service-6
-    bg-service-7
-    bg-service-8
-    text-service-1
-    text-service-2
-    text-service-3
-    text-service-4
-    text-service-5
-    text-service-6
-    text-service-7
-    text-service-8
-    @tailwindcss safelist end
-    */
 
     --color-service-1: #fd7fe9;
     --color-service-2: #f6c92d;

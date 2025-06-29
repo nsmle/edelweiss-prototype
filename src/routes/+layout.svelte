@@ -1,5 +1,6 @@
 <script lang="ts">
     import { page } from '$app/state';
+    import Footer from '$lib/footer.svelte';
     import Header from '$lib/header.svelte';
     import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
     import '../app.css';
@@ -32,6 +33,7 @@
 <Header />
 
 <main>
-    <!-- +page.svelte is `@render`ed here -->
     {@render children()}
 </main>
+
+<Footer />
