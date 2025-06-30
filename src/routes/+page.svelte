@@ -1,5 +1,6 @@
 <script lang="ts">
     import Hero from '$lib/hero.svelte';
+    import HeroTestimoni from '$lib/hero.testimoni.svelte';
     import StackFavorite from '$lib/stack.favorite.svelte';
     import StackRecommendation from '$lib/stack.recommendation.svelte';
 
@@ -147,7 +148,7 @@
 <Hero />
 
 <div class="relative isolate mx-auto pt-20 sm:pt-28">
-    <div class="mx-auto pt-52 pb-12 sm:py-48 lg:py-56">
+    <div class="z-10 mx-auto pt-52 pb-12 sm:py-48 lg:py-56">
         <div class="mx-auto flex max-w-7xl px-4 sm:px-8">
             <div class="text-start">
                 <h1
@@ -180,7 +181,7 @@
 </div>
 
 <div class="relative isolate mx-auto flex max-w-7xl items-center px-4 pt-12 sm:px-8 sm:pt-28">
-    <div class="flex flex-col py-12 sm:py-28 md:flex-row lg:py-36">
+    <div class="z-10 flex flex-col py-12 sm:py-28 md:flex-row lg:py-36">
         <div class="flex flex-col text-start">
             <h1
                 class="font-sans text-xs/10 font-bold tracking-normal text-balance text-gray-500 uppercase sm:text-base/10"
@@ -237,18 +238,18 @@
     </div>
 
     <div
-        class="absolute inset-x-0 top-[calc(100%-13rem)] -z-50 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+        class="absolute inset-x-0 top-[calc(100%-13rem)] -z-50 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-31rem)]"
         aria-hidden="true"
     >
         <div
-            class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/3 rotate-20 bg-linear-to-tr from-green-400 to-purple-500 opacity-25 sm:left-[calc(50%-30rem)] sm:w-288.75"
+            class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/3 rotate-20 bg-linear-to-tr from-green-400 to-purple-500 opacity-25 sm:left-[calc(50%-20rem)] sm:w-288.75"
             style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
         ></div>
     </div>
 </div>
 
 <div class="relative isolate pt-12 sm:pt-28">
-    <div class="mx-auto py-12 text-center sm:py-28 lg:py-36">
+    <div class="z-10 mx-auto py-12 text-center sm:py-28 lg:py-36">
         <div class="mx-auto max-w-7xl px-4 sm:px-8">
             <h1
                 class="font-sans text-xs/10 font-bold tracking-normal text-balance text-gray-500 uppercase sm:text-base/10"
@@ -266,5 +267,130 @@
         <div class="mt-10">
             <StackRecommendation services={recommendationServices} />
         </div>
+    </div>
+
+    <div
+        class="absolute inset-x-0 top-[calc(100%-13rem)] -z-50 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-22rem)]"
+        aria-hidden="true"
+    >
+        <div
+            class="relative left-[calc(50%+3rem)] aspect-1155/678 w-244.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff6b6b] to-[#3790fa] opacity-20 sm:left-[calc(10%+16rem)] sm:w-228.75"
+            style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
+        ></div>
+    </div>
+</div>
+
+<div class="relative isolate mx-auto flex max-w-7xl items-center px-4 pt-12 sm:px-8 sm:pt-18">
+    <div class="z-10 mx-auto flex justify-center text-center sm:py-28 md:flex-row lg:py-36">
+        <div class="flex flex-col justify-center text-center">
+            <h1
+                class="font-sans text-xs/10 font-bold tracking-normal text-balance text-gray-500 uppercase sm:text-base/10"
+            >
+                3 Alasan kenapa kami layak dipilih
+            </h1>
+            <h1 class="text-3xl font-semibold tracking-tight text-balance text-gray-800/90 sm:text-6xl">
+                Apa yang membuat kami berbeda
+            </h1>
+            <p
+                class="mx-auto mt-4 text-sm font-medium text-pretty text-gray-500/95 sm:mt-6 sm:max-w-3xl sm:px-4 sm:text-xl/8"
+            >
+                Kami memahami pentingnya momen spesial dalam hidup, oleh karena itu kami berkomitmen untuk memberikan
+                layanan yang terbaik. Berikut adalah tiga alasan mengapa kami layak dipilih sebagai mitra fotografi mu.
+            </p>
+            <div class="mt-10 grid grid-cols-1 justify-center gap-6 px-4 sm:mt-14 sm:grid-cols-3 sm:gap-6 sm:p-0">
+                <div
+                    class="sm:mx-none group/card mx-auto max-w-md cursor-context-menu rounded-2xl border border-gray-200 p-6 py-14 shadow-2xl shadow-blue-50/10 transition-all duration-300 ease-in-out hover:rounded-3xl hover:border-transparent hover:bg-white hover:shadow-blue-800/10 sm:max-w-md sm:rounded-3xl sm:p-8 sm:py-16 sm:hover:rounded-4xl"
+                >
+                    <div
+                        class="bg-service-4 group-hover/card:ring-service-4/15 mb-6 inline-flex rounded-2xl p-5 shadow-blue-700/20 transition-all duration-300 ease-in-out group-hover/card:shadow-2xl group-hover/card:ring-8 sm:mb-8 sm:rounded-3xl sm:p-7"
+                    >
+                        <svg
+                            class="size-8 text-gray-100 sm:size-9"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.368 2.371-3 3.739-3a1.5 1.5 0 0 1 0 3h.003ZM11 13H9v7h2v-7Zm-4 0H2v5a2 2 0 0 0 2 2h3v-7Zm6 0v7h3a2 2 0 0 0 2-2v-5h-5Z"
+                            />
+                        </svg>
+                    </div>
+                    <h5 class="text-xl font-semibold tracking-tight text-gray-600 sm:text-2xl">
+                        Kualitas Foto Profesional
+                    </h5>
+                    <p class="mt-3 font-sans text-sm font-medium text-gray-500 sm:text-base">
+                        Menghasilkan foto berkualitas tinggi dengan peralatan profesional dan teknik fotografi yang
+                        dapat diandalkan.
+                    </p>
+                </div>
+                <div
+                    class="sm:mx-none group/card mx-auto max-w-md cursor-context-menu rounded-2xl border border-gray-200 p-6 py-14 shadow-2xl shadow-blue-50/10 transition-all duration-300 ease-in-out hover:rounded-3xl hover:border-transparent hover:bg-white hover:shadow-blue-800/10 sm:max-w-md sm:rounded-3xl sm:p-8 sm:py-16 sm:hover:rounded-4xl"
+                >
+                    <div
+                        class="bg-service-2 group-hover/card:ring-service-2/15 mb-6 inline-flex rounded-2xl p-5 shadow-blue-700/20 transition-all duration-300 ease-in-out group-hover/card:shadow-2xl group-hover/card:ring-8 sm:mb-8 sm:rounded-3xl sm:p-7"
+                    >
+                        <svg
+                            class="size-8 text-gray-100 sm:size-9"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.368 2.371-3 3.739-3a1.5 1.5 0 0 1 0 3h.003ZM11 13H9v7h2v-7Zm-4 0H2v5a2 2 0 0 0 2 2h3v-7Zm6 0v7h3a2 2 0 0 0 2-2v-5h-5Z"
+                            />
+                        </svg>
+                    </div>
+                    <h5 class="text-xl font-semibold tracking-tight text-gray-600 sm:text-2xl">
+                        Cetak Cepat dan Bagikan
+                    </h5>
+                    <p class="mt-3 font-sans text-sm font-medium text-gray-500 sm:text-base">
+                        Menyediakan layanan cetak foto instan dan berbagi digital, sehingga kamu bisa langsung menikmati
+                        hasilnya.
+                    </p>
+                </div>
+                <div
+                    class="sm:mx-none group/card mx-auto max-w-md cursor-context-menu rounded-2xl border border-gray-200 p-6 py-14 shadow-2xl shadow-blue-50/10 transition-all duration-300 ease-in-out hover:rounded-3xl hover:border-transparent hover:bg-white hover:shadow-blue-800/10 sm:max-w-md sm:rounded-3xl sm:p-8 sm:py-16 sm:hover:rounded-4xl"
+                >
+                    <div
+                        class="bg-service-1 group-hover/card:ring-service-1/15 mb-6 inline-flex rounded-2xl p-5 shadow-blue-700/20 transition-all duration-300 ease-in-out group-hover/card:shadow-2xl group-hover/card:ring-8 sm:mb-8 sm:rounded-3xl sm:p-7"
+                    >
+                        <svg
+                            class="size-8 text-gray-100 sm:size-9"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.368 2.371-3 3.739-3a1.5 1.5 0 0 1 0 3h.003ZM11 13H9v7h2v-7Zm-4 0H2v5a2 2 0 0 0 2 2h3v-7Zm6 0v7h3a2 2 0 0 0 2-2v-5h-5Z"
+                            />
+                        </svg>
+                    </div>
+                    <h5 class="text-xl font-semibold tracking-tight text-gray-600 sm:text-2xl">Fleksibilitas Lokasi</h5>
+                    <p class="mt-3 font-sans text-sm font-medium text-gray-500 sm:text-base">
+                        Menyediakan layanan fotografi di berbagai lokasi, baik indoor maupun outdoor, sesuai dengan
+                        kebutuhan acara.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="relative isolate flex items-center pt-12 sm:pt-18">
+    <div class="z-10 w-full py-12 sm:py-28 md:flex-row lg:py-36">
+        <HeroTestimoni />
+    </div>
+
+    <div
+        class="absolute inset-x-0 top-[calc(100%-33rem)] -z-50 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-51rem)]"
+        aria-hidden="true"
+    >
+        <div
+            class="relative left-[calc(50%-11rem)] aspect-1155/678 w-244.5 -translate-x-1/3 rotate-30 bg-linear-to-tr from-green-400 to-purple-500 opacity-30 sm:left-[calc(50%-20rem)] sm:w-388.75"
+            style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
+        ></div>
     </div>
 </div>

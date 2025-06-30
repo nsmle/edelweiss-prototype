@@ -15,9 +15,9 @@
                     <div
                         class="relative rounded-full px-3 py-1 text-base/6 text-gray-100 ring-1 ring-gray-100/20 hover:ring-gray-100/20"
                     >
-                        Ciptakan momen-momen berharga dalam hidup kita.
-                        <a href="/about" class="text-primary-300 font-semibold"
-                            ><span class="absolute inset-0" aria-hidden="true"></span>Read more
+                        Menciptakan momen-momen berharga dalam hidup.
+                        <a href="/gallery" class="text-primary-300 font-semibold"
+                            ><span class="absolute inset-0" aria-hidden="true"></span>Kenangan
                             <span aria-hidden="true">&rarr;</span></a
                         >
                     </div>

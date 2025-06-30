@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { page } from '$app/state';
     let currentYear = new Date().getFullYear();
 
     let navigations = [
@@ -36,7 +35,9 @@
     ];
 </script>
 
-<footer class="bg-clean-500 mt-40 w-full rounded-3xl shadow-[0_-50px_50px_rgb(59,130,246,0.03)] sm:rounded-t-[50px]">
+<footer
+    class="bg-clean-500 relative z-10 mt-40 w-full rounded-3xl shadow-[0_-50px_50px_rgb(59,130,246,0.03)] sm:rounded-t-[50px]"
+>
     <div class="mx-auto px-4 sm:max-w-7xl sm:px-6 lg:px-8">
         <div
             class="grid grid-cols-1 gap-3 gap-y-8 py-10 max-sm:mx-auto max-sm:max-w-sm sm:grid-cols-3 md:gap-8 lg:grid-cols-5"
@@ -153,15 +154,16 @@
             <div class="flex flex-col items-center justify-center lg:flex-row lg:justify-between">
                 <span class="flex items-center gap-1 font-sans text-sm font-medium text-nowrap text-gray-500"
                     ><span class="hidden sm:block">Copyright </span><span class="flex items-center">©</span>
-                    <a href={page.url.origin} class="flex gap-1 font-semibold text-green-600"
-                        >Edelweiss<span class="hidden sm:flex"> Photobooth</span></a
+                    <a href="https://github.com/nsmle" class="flex gap-1 font-semibold text-green-600"
+                        >nsmle<span class="hidden sm:flex">Lab</span></a
                     >
                     {currentYear}. All rights reserved.</span
                 >
                 <div class="mt-4 flex space-x-4 sm:justify-center lg:mt-0">
                     <a
-                        aria-labelledby="social-media-link"
-                        href="/"
+                        aria-labelledby="Twitter"
+                        href="https://x.com/nsmle_/"
+                        target="_blank"
                         class="group/social flex h-9 w-9 items-center justify-center rounded-full transition-all duration-300 ease-in-out hover:bg-green-100/90"
                     >
                         <svg
@@ -181,8 +183,9 @@
                         </svg>
                     </a>
                     <a
-                        aria-labelledby="social-media-link"
-                        href="/"
+                        aria-labelledby="Instagram"
+                        href="https://instagram.com/nsmle_/"
+                        target="_blank"
                         class="group/social flex h-9 w-9 items-center justify-center rounded-full transition-all duration-300 ease-in-out hover:bg-green-100/90"
                     >
                         <svg
@@ -198,8 +201,9 @@
                         </svg>
                     </a>
                     <a
-                        aria-labelledby="social-media-link"
-                        href="/"
+                        aria-labelledby="LinkedIn"
+                        href="https://linkedin.com/in/fikipratama"
+                        target="_blank"
                         class="group/social flex h-9 w-9 items-center justify-center rounded-full transition-all duration-300 ease-in-out hover:bg-green-100/90"
                     >
                         <svg
@@ -215,8 +219,9 @@
                         </svg>
                     </a>
                     <a
-                        aria-labelledby="social-media-link"
-                        href="/"
+                        aria-labelledby="YouTube"
+                        href="https://youtube.com/@nsmle"
+                        target="_blank"
                         class="group/social flex h-9 w-9 items-center justify-center rounded-full transition-all duration-300 ease-in-out hover:bg-green-100/90"
                     >
                         <svg
