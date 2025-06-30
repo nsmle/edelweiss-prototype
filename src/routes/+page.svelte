@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Embed from '$lib/embed.svelte';
     import Hero from '$lib/hero.svelte';
     import HeroTestimoni from '$lib/hero.testimoni.svelte';
     import StackFavorite from '$lib/stack.favorite.svelte';
@@ -197,7 +198,7 @@
             </p>
             <div class="order-last mt-4 flex items-center justify-start sm:mt-10">
                 <a
-                    href="/booking"
+                    href="/contact"
                     class="ring-primary-200/20 focus:ring-primary-200/50 w-full cursor-pointer rounded-full bg-gradient-to-br from-green-400 via-green-500 to-green-500 px-6 py-2.5 text-center text-base font-medium text-white ring-4 transition-all duration-300 ease-in-out outline-none hover:from-green-300 hover:via-green-400 hover:to-green-500 sm:w-auto sm:text-xl"
                     >Hubungi Kami</a
                 >
@@ -392,5 +393,123 @@
             class="relative left-[calc(50%-11rem)] aspect-1155/678 w-244.5 -translate-x-1/3 rotate-30 bg-linear-to-tr from-green-400 to-purple-500 opacity-30 sm:left-[calc(50%-20rem)] sm:w-388.75"
             style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
         ></div>
+    </div>
+</div>
+
+<div class="relative isolate mx-auto flex max-w-7xl flex-col items-center px-4 pt-12 sm:px-8 sm:pt-18">
+    <div class="z-10 mx-auto flex justify-center text-center sm:pt-28 lg:pt-36">
+        <div class="flex flex-col justify-center text-center">
+            <h1
+                class="font-sans text-xs/10 font-bold tracking-normal text-balance text-gray-500 uppercase sm:text-base/10"
+            >
+                Tunggu apa lagi
+            </h1>
+            <h1 class="text-3xl font-semibold tracking-tight text-balance text-gray-800/90 sm:text-6xl">
+                Pesan Sekarang Juga
+            </h1>
+            <p
+                class="mx-auto mt-4 text-sm font-medium text-pretty text-gray-500/95 sm:mt-6 sm:max-w-3xl sm:px-4 sm:text-xl/8"
+            >
+                Dengan pengalaman dan dedikasi kami, kami siap membantu kamu menciptakan momen yang tak terlupakan.
+                Pesan sekarang dan biarkan kami menangkap setiap detil dari acara spesial mu!
+            </p>
+            <div
+                class="mx-auto mt-8 flex w-full flex-col justify-center gap-y-2 sm:mt-10 sm:flex-row sm:gap-x-4 sm:px-4"
+            >
+                <a
+                    href="/contact"
+                    class="w-full cursor-pointer rounded-lg border border-gray-400 px-5.5 py-2 text-center text-base font-medium text-nowrap text-gray-700 backdrop-blur-2xl backdrop-brightness-105 transition-all duration-300 ease-in-out outline-none hover:border-green-400 hover:bg-gradient-to-br hover:from-green-300 hover:via-green-400 hover:to-green-500 hover:text-white hover:ring-4 hover:ring-green-200/20 focus:ring-4 focus:ring-green-200/50 sm:w-auto sm:rounded-full sm:text-xl"
+                    >Hubungi Kami</a
+                >
+                <a
+                    href="/booking"
+                    class="ring-primary-200/20 focus:ring-primary-200/50 w-full cursor-pointer rounded-lg bg-gradient-to-br from-green-400 via-green-500 to-green-500 px-6 py-2.5 text-center text-base font-medium text-nowrap text-white ring-4 transition-all duration-300 ease-in-out outline-none hover:from-green-300 hover:via-green-400 hover:to-green-500 sm:w-auto sm:rounded-full sm:text-xl"
+                    >Pesan Sekarang</a
+                >
+            </div>
+
+            <!-- <div class="mt-10 grid grid-cols-1 justify-center gap-6 px-4 sm:mt-14 sm:grid-cols-3 sm:gap-6 sm:p-0">
+                <div
+                    class="sm:mx-none group/card mx-auto max-w-md cursor-context-menu rounded-2xl border border-gray-200 p-6 py-14 shadow-2xl shadow-blue-50/10 transition-all duration-300 ease-in-out hover:rounded-3xl hover:border-transparent hover:bg-white hover:shadow-blue-800/10 sm:max-w-md sm:rounded-3xl sm:p-8 sm:py-16 sm:hover:rounded-4xl"
+                >
+                    <div
+                        class="bg-service-4 group-hover/card:ring-service-4/15 mb-6 inline-flex rounded-2xl p-5 shadow-blue-700/20 transition-all duration-300 ease-in-out group-hover/card:shadow-2xl group-hover/card:ring-8 sm:mb-8 sm:rounded-3xl sm:p-7"
+                    >
+                        <svg
+                            class="size-8 text-gray-100 sm:size-9"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.368 2.371-3 3.739-3a1.5 1.5 0 0 1 0 3h.003ZM11 13H9v7h2v-7Zm-4 0H2v5a2 2 0 0 0 2 2h3v-7Zm6 0v7h3a2 2 0 0 0 2-2v-5h-5Z"
+                            />
+                        </svg>
+                    </div>
+                    <h5 class="text-xl font-semibold tracking-tight text-gray-600 sm:text-2xl">
+                        Kualitas Foto Profesional
+                    </h5>
+                    <p class="mt-3 font-sans text-sm font-medium text-gray-500 sm:text-base">
+                        Menghasilkan foto berkualitas tinggi dengan peralatan profesional dan teknik fotografi yang
+                        dapat diandalkan.
+                    </p>
+                </div>
+                <div
+                    class="sm:mx-none group/card mx-auto max-w-md cursor-context-menu rounded-2xl border border-gray-200 p-6 py-14 shadow-2xl shadow-blue-50/10 transition-all duration-300 ease-in-out hover:rounded-3xl hover:border-transparent hover:bg-white hover:shadow-blue-800/10 sm:max-w-md sm:rounded-3xl sm:p-8 sm:py-16 sm:hover:rounded-4xl"
+                >
+                    <div
+                        class="bg-service-2 group-hover/card:ring-service-2/15 mb-6 inline-flex rounded-2xl p-5 shadow-blue-700/20 transition-all duration-300 ease-in-out group-hover/card:shadow-2xl group-hover/card:ring-8 sm:mb-8 sm:rounded-3xl sm:p-7"
+                    >
+                        <svg
+                            class="size-8 text-gray-100 sm:size-9"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.368 2.371-3 3.739-3a1.5 1.5 0 0 1 0 3h.003ZM11 13H9v7h2v-7Zm-4 0H2v5a2 2 0 0 0 2 2h3v-7Zm6 0v7h3a2 2 0 0 0 2-2v-5h-5Z"
+                            />
+                        </svg>
+                    </div>
+                    <h5 class="text-xl font-semibold tracking-tight text-gray-600 sm:text-2xl">
+                        Cetak Cepat dan Bagikan
+                    </h5>
+                    <p class="mt-3 font-sans text-sm font-medium text-gray-500 sm:text-base">
+                        Menyediakan layanan cetak foto instan dan berbagi digital, sehingga kamu bisa langsung menikmati
+                        hasilnya.
+                    </p>
+                </div>
+                <div
+                    class="sm:mx-none group/card mx-auto max-w-md cursor-context-menu rounded-2xl border border-gray-200 p-6 py-14 shadow-2xl shadow-blue-50/10 transition-all duration-300 ease-in-out hover:rounded-3xl hover:border-transparent hover:bg-white hover:shadow-blue-800/10 sm:max-w-md sm:rounded-3xl sm:p-8 sm:py-16 sm:hover:rounded-4xl"
+                >
+                    <div
+                        class="bg-service-1 group-hover/card:ring-service-1/15 mb-6 inline-flex rounded-2xl p-5 shadow-blue-700/20 transition-all duration-300 ease-in-out group-hover/card:shadow-2xl group-hover/card:ring-8 sm:mb-8 sm:rounded-3xl sm:p-7"
+                    >
+                        <svg
+                            class="size-8 text-gray-100 sm:size-9"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.368 2.371-3 3.739-3a1.5 1.5 0 0 1 0 3h.003ZM11 13H9v7h2v-7Zm-4 0H2v5a2 2 0 0 0 2 2h3v-7Zm6 0v7h3a2 2 0 0 0 2-2v-5h-5Z"
+                            />
+                        </svg>
+                    </div>
+                    <h5 class="text-xl font-semibold tracking-tight text-gray-600 sm:text-2xl">Fleksibilitas Lokasi</h5>
+                    <p class="mt-3 font-sans text-sm font-medium text-gray-500 sm:text-base">
+                        Menyediakan layanan fotografi di berbagai lokasi, baik indoor maupun outdoor, sesuai dengan
+                        kebutuhan acara.
+                    </p>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <div class="z-10 mx-auto flex w-full justify-center pt-8 sm:pt-18 md:px-4 lg:px-8 lg:pt-16">
+        <Embed />
     </div>
 </div>

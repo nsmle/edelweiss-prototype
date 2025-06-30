@@ -36,7 +36,7 @@
 </script>
 
 <footer
-    class="bg-clean-500 relative z-10 mt-40 w-full rounded-3xl shadow-[0_-50px_50px_rgb(59,130,246,0.03)] sm:rounded-t-[50px]"
+    class="bg-clean-500 relative z-10 mt-26 w-full rounded-3xl shadow-[0_-50px_50px_rgb(59,130,246,0.03)] sm:mt-40 sm:rounded-t-[50px]"
 >
     <div class="mx-auto px-4 sm:max-w-7xl sm:px-6 lg:px-8">
         <div
