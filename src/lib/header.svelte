@@ -1,7 +1,10 @@
 <script lang="ts">
+    import { page } from '$app/state';
     import NavMobile from '$lib/nav.mobile.svelte';
     import Nav from '$lib/nav.svelte';
     import { onMount } from 'svelte';
+
+    const { header } = page.data;
 
     let y: number = 0;
     let headerClass = '';
@@ -30,8 +33,8 @@
 
 <header class={`fixed z-50 w-full ${headerClass} transition-all duration-300 ease-in-out`}>
     <!-- Desktop Navigation -->
-    <Nav padding={navStyle} scrollY={y} />
+    <Nav padding={navStyle} scrollY={y} pageUrlPathname={page.url.pathname} navigations={header.navigations} />
 
     <!-- Mobile Navigation -->
-    <NavMobile padding={navStyle} scrollY={y} />
+    <NavMobile padding={navStyle} scrollY={y} pageUrlPathname={page.url.pathname} navigations={header.navigations} />
 </header>

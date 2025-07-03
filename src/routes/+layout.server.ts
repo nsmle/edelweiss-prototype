@@ -38,6 +38,15 @@ export const load: LayoutServerLoad<LayoutData> = async () => {
                 'Ciptakan moment dan abadikan kenangan, teman pendamping setiap moment penting mu dengan layanan yang terbaik dan terpercaya.'
         },
         isLocal: process.env.NODE_ENV === 'development' || !VERCEL,
+        header: {
+            navigations: [
+                { href: '/', label: 'Beranda' },
+                { href: '/service', label: 'Layanan' },
+                { href: '/gallery', label: 'Gallery' },
+                { href: '/about', label: 'Tentang Kami' },
+                { href: '/contact', label: 'Kontak Kami' }
+            ]
+        },
         footer: {
             navigations: [
                 {

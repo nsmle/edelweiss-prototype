@@ -1,17 +1,11 @@
 <script lang="ts">
-    import { page } from '$app/state';
     import Brand from '$lib/brand.svelte';
-    const props = $props();
 
-    const navLinks = [
-        { href: '/', label: 'Beranda' },
-        { href: '/service', label: 'Layanan' },
-        { href: '/gallery', label: 'Gallery' },
-        { href: '/about', label: 'Tentang Kami' },
-        { href: '/contact', label: 'Kontak Kami' }
-    ];
+    const props = $props();
+    const { pageUrlPathname, navigations } = props;
+
     const isActivePage = (link: string): boolean => {
-        return page.url.pathname === link || page.url.pathname.startsWith(`${link}/`);
+        return pageUrlPathname === link || pageUrlPathname.startsWith(`${link}/`);
     };
 </script>
 
@@ -23,11 +17,11 @@
         <Brand />
     </div>
     <div class="flex items-center lg:flex lg:gap-x-12">
-        {#each navLinks as nav}
+        {#each navigations as navigation}
             <a
-                href={nav.href}
-                class={`font-poppins text-sm/6 font-semibold ${isActivePage(nav.href) ? 'text-primary-500' : 'text-gray-800'}`}
-                >{nav.label}</a
+                href={navigation.href}
+                class={`font-poppins text-sm/6 font-semibold ${isActivePage(navigation.href) ? 'text-primary-500' : 'text-gray-800'}`}
+                >{navigation.label}</a
             >
         {/each}
     </div>

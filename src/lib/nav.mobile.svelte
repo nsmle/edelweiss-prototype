@@ -1,19 +1,13 @@
 <script lang="ts">
-    import { page } from '$app/state';
     import Brand from '$lib/brand.svelte';
     import { onMount } from 'svelte';
+
     const props = $props();
+    const { pageUrlPathname, navigations } = props;
 
     let isHeaderShow = $state(false);
-    const navLinks = [
-        { href: '/', label: 'Beranda' },
-        { href: '/service', label: 'Layanan' },
-        { href: '/gallery', label: 'Gallery' },
-        { href: '/about', label: 'Tentang Kami' },
-        { href: '/contact', label: 'Kontak Kami' }
-    ];
     const isActivePage = (link: string): boolean => {
-        return page.url.pathname === link || page.url.pathname.startsWith(`${link}/`);
+        return pageUrlPathname === link || pageUrlPathname.startsWith(`${link}/`);
     };
 
     const toggleHeader = (): boolean => (isHeaderShow = !isHeaderShow);
@@ -80,16 +74,16 @@
         >
             <div class="-my-6 divide-y divide-gray-500/10">
                 <div class="space-y-1 py-6">
-                    {#each navLinks as navlink}
+                    {#each navigations as navigation}
                         <a
-                            href={navlink.href}
+                            href={navigation.href}
                             onclick={toggleHeader}
                             class={'-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold ' +
-                                (isActivePage(navlink.href)
+                                (isActivePage(navigation.href)
                                     ? 'text-primary-500 bg-primary-100/40 hover:bg-primary-50 font-semibold'
                                     : 'hover:text-primary-600 hover:bg-primary-100/20 text-gray-600')}
                         >
-                            {navlink.label}
+                            {navigation.label}
                         </a>
                     {/each}
                 </div>
