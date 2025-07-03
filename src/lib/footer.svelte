@@ -61,7 +61,7 @@
 
                 <form
                     class="group/newsletter mx-auto transition-all duration-300 ease-in-out"
-                    action="?/newsletter"
+                    action="/?/newsletter"
                     method="POST"
                     use:enhance={({ formElement, formData, action, cancel, submitter }) => {
                         isLoadingNewsletter = true;

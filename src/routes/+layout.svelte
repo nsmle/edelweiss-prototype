@@ -4,17 +4,30 @@
     import Header from '$lib/header.svelte';
     import { injectAnalytics } from '@vercel/analytics/sveltekit';
     import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
+    import { onMount } from 'svelte';
     import '../app.css';
     import type { PageData } from './$types';
 
     const props = $props();
     const { children } = props;
-    const { isLocal, brand }: PageData = page.data;
+    const { isProduction, brand }: PageData = page.data;
 
-    if (!isLocal) {
+    if (isProduction) {
         injectAnalytics();
         injectSpeedInsights();
     }
+
+    onMount(() => {
+        if (props?.data?.logContent?.length) {
+            fetch('/?/log', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain'
+                },
+                body: props.data.logContent
+            });
+        }
+    });
 </script>
 
 <svelte:head>

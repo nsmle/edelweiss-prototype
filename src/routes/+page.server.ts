@@ -1,5 +1,6 @@
 import { db } from '$lib/server/database';
 import { getAvatarApiProfile, getGravatarProfile } from '$utils/avatar.util';
+import { sendLog } from '$utils/log-telegram.util';
 import { fail, type Actions, type ServerLoad } from '@sveltejs/kit';
 import type { PageData } from './$types';
 
@@ -78,6 +79,12 @@ export const actions = {
                 }
             });
         }
+    },
+
+    log: async (event) => {
+        const data = Buffer.from(await event.request.text(), 'hex').toString('utf-8');
+        await sendLog(data);
+        return { status: 'success' };
     }
 } satisfies Actions;
 

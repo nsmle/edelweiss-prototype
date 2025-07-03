@@ -1,4 +1,4 @@
-import { VERCEL } from '$env/static/private';
+import { getAccessPageLog } from '$utils/log-telegram.util';
 import type { LayoutServerLoad } from './$types';
 
 interface LayoutData {
@@ -8,7 +8,7 @@ interface LayoutData {
         motto: string;
         description: string;
     };
-    isLocal: boolean;
+    isProduction: boolean;
     footer: {
         navigations: Array<{
             label: string;
@@ -28,7 +28,14 @@ interface LayoutData {
     };
 }
 
-export const load: LayoutServerLoad<LayoutData> = async () => {
+export const load: LayoutServerLoad<LayoutData> = async (page) => {
+    const isProduction = Boolean(
+        process.env?.VERCEL ? Boolean(process.env?.VERCEL) : process.env.NODE_ENV === 'production'
+    );
+
+    let logContent = '';
+    if (isProduction) logContent = await getAccessPageLog(page);
+
     return {
         brand: {
             name: 'Edelweiss',
@@ -37,7 +44,7 @@ export const load: LayoutServerLoad<LayoutData> = async () => {
             description:
                 'Ciptakan moment dan abadikan kenangan, teman pendamping setiap moment penting mu dengan layanan yang terbaik dan terpercaya.'
         },
-        isLocal: process.env.NODE_ENV === 'development' || !VERCEL,
+        isProduction: isProduction,
         header: {
             navigations: [
                 { href: '/', label: 'Beranda' },
@@ -91,6 +98,7 @@ export const load: LayoutServerLoad<LayoutData> = async () => {
                 year: new Date().getFullYear(),
                 link: 'https://github.com/nsmle/edelweiss-prototype'
             }
-        }
+        },
+        logContent: logContent
     };
 };
