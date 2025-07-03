@@ -6,11 +6,11 @@
     import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
     import { onMount } from 'svelte';
     import '../app.css';
-    import type { PageData } from './$types';
 
     const props = $props();
     const { children } = props;
-    const { isProduction, brand }: PageData = page.data;
+
+    const { isProduction, brand } = page.data;
 
     if (isProduction) {
         injectAnalytics();

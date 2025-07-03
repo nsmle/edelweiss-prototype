@@ -6,8 +6,7 @@
     import StackRecommendation from '$lib/stack.recommendation.svelte';
     import type { PageData } from './$types';
 
-    const props = $props();
-    const { title }: PageData = props.data;
+    export let data: PageData;
 
     const favoriteServices = [
         {
@@ -147,7 +146,7 @@
 </script>
 
 <svelte:head>
-    <title>{title}</title>
+    <title>{data.title}</title>
 </svelte:head>
 
 <Hero />

@@ -33,8 +33,8 @@
 
 <header class={`fixed z-50 w-full ${headerClass} transition-all duration-300 ease-in-out`}>
     <!-- Desktop Navigation -->
-    <Nav padding={navStyle} scrollY={y} pageUrlPathname={page.url.pathname} navigations={header.navigations} />
+    <Nav padding={navStyle} scrollY={y} navigations={header.navigations} />
 
     <!-- Mobile Navigation -->
-    <NavMobile padding={navStyle} scrollY={y} pageUrlPathname={page.url.pathname} navigations={header.navigations} />
+    <NavMobile padding={navStyle} scrollY={y} navigations={header.navigations} />
 </header>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+    xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+    xsi:schemaLocation="
+        http://www.sitemaps.org/schemas/sitemap/0.9
+        https://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+        http://www.google.com/schemas/sitemap-news/0.9
+        https://www.google.com/schemas/sitemap-news/0.9/sitemap-news.xsd
+        http://www.google.com/schemas/sitemap-image/1.1
+        https://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd
+        http://www.google.com/schemas/sitemap-video/1.1
+        https://www.google.com/schemas/sitemap-video/1.1/sitemap-video.xsd
+    "
+>
+    <url>
+        <loc>https://dicea.fun/service/</loc>
+        <lastmod>2025-06-26T12:02:42+07:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://dicea.fun/gallery/</loc>
+        <lastmod>2025-06-26T12:02:42+07:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://dicea.fun/about/</loc>
+        <lastmod>2025-06-26T12:02:42+07:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://dicea.fun/contact/</loc>
+        <lastmod>2025-06-26T12:02:42+07:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://dicea.fun/blog/</loc>
+        <lastmod>2025-06-26T12:02:42+07:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dicea.fun/help/</loc>
+        <lastmod>2025-06-26T12:02:42+07:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dicea.fun/terms/</loc>
+        <lastmod>2025-06-26T12:02:42+07:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dicea.fun/privacy/</loc>
+        <lastmod>2025-06-26T12:02:42+07:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dicea.fun/cookie/</loc>
+        <lastmod>2025-06-26T12:02:42+07:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dicea.fun/</loc>
+        <lastmod>2025-06-26T12:02:42+07:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <video:video>
+            <video:thumbnail_loc>https://i.ytimg.com/vi/m9FmY9KgfG4/hqdefault.jpg</video:thumbnail_loc>
+            <video:title>Changes</video:title>
+            <video:description>Blasterjaxx X Kickbait X CERES - Changes (Official Music Video)</video:description>
+            <video:content_loc>https://www.youtube.com/watch?v=m9FmY9KgfG4</video:content_loc>
+            <video:player_loc allow_embed="yes">https://www.youtube.com/embed/m9FmY9KgfG4</video:player_loc>
+            <video:duration>155</video:duration>
+            <video:category>Music Video</video:category>
+        </video:video>
+    </url>
+</urlset>
