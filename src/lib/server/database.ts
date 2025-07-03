@@ -1,6 +1,13 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '@prisma/client/edge';
 
-const database = new PrismaClient();
+let database: PrismaClient;
+if (process.env.NODE_ENV === 'production') {
+    database = new PrismaClient();
+} else {
+    let g = global as any;
+    if (!g.database) g.database = new PrismaClient();
+    database = g.database;
+}
 
 export const getNewsletterEmail = async (email: string) => {
     const emailExists = await database.newsletter.findFirst({

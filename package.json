@@ -15,7 +15,8 @@
         "format": "prettier --write .",
         "migrate": "bunx prisma migrate dev --name init",
         "format:check": "prettier --check .",
-        "postinstall": "prisma generate"
+        "vercel-build": "prisma generate --no-engine && prisma migrate deploy && vite build",
+        "postinstall": "prisma generate --no-engine"
     },
     "devDependencies": {
         "@sveltejs/kit": "^2.21.3",
@@ -38,6 +39,7 @@
     "dependencies": {
         "@prisma/client": "^6.11.0",
         "@sveltejs/adapter-vercel": "^5.7.2",
+        "@vercel/analytics": "^1.5.0",
         "@vercel/speed-insights": "^1.2.0",
         "hash-wasm": "^4.12.0"
     }

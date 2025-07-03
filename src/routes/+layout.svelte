@@ -2,6 +2,7 @@
     import { page } from '$app/state';
     import Footer from '$lib/footer.svelte';
     import Header from '$lib/header.svelte';
+    import { injectAnalytics } from '@vercel/analytics/sveltekit';
     import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
     import '../app.css';
     import type { PageData } from './$types';
@@ -10,7 +11,10 @@
     const { children } = props;
     const { isLocal, brand }: PageData = page.data;
 
-    if (!isLocal) injectSpeedInsights();
+    if (!isLocal) {
+        injectAnalytics();
+        injectSpeedInsights();
+    }
 </script>
 
 <svelte:head>
