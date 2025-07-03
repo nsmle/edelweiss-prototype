@@ -15,7 +15,7 @@ const config = {
         // See https://svelte.dev/docs/kit/adapters for more information about adapters.
         adapter: Boolean(process.env.VERCEL || 0)
             ? vercelAdapter({
-                  runtime: 'edge'
+                  runtime: 'nodejs22.x'
               })
             : bunAdapter(),
 

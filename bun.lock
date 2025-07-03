@@ -25,6 +25,9 @@
         "tailwindcss": "^4.1.8",
         "vite": "^6.3.5",
       },
+      "optionalDependencies": {
+        "@types/node": "^22.11.0",
+      },
       "peerDependencies": {
         "typescript": "^5",
       },

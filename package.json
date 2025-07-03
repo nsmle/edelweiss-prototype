@@ -29,13 +29,16 @@
         "svelte": "^5.33.18",
         "svelte-adapter-bun": "^0.5.2",
         "tailwindcss": "^4.1.8",
-        "vite": "^6.3.5"
+        "vite": "^6.3.5",
+        "@types/bun": "latest"
     },
     "peerDependencies": {
         "typescript": "^5"
     },
+    "optionalDependencies": {
+        "@types/node": "^22.11.0"
+    },
     "dependencies": {
-        "@types/bun": "latest",
         "@prisma/client": "^6.11.0",
         "@prisma/extension-accelerate": "^2.0.1",
         "@sveltejs/adapter-vercel": "^5.7.2",
