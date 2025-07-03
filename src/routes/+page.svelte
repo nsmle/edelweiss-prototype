@@ -4,6 +4,10 @@
     import HeroTestimoni from '$lib/hero.testimoni.svelte';
     import StackFavorite from '$lib/stack.favorite.svelte';
     import StackRecommendation from '$lib/stack.recommendation.svelte';
+    import type { PageData } from './$types';
+
+    const props = $props();
+    const { title }: PageData = props.data;
 
     const favoriteServices = [
         {
@@ -143,7 +147,7 @@
 </script>
 
 <svelte:head>
-    <title>Edelweiss Photobooth | Ciptakan moment, abadikan kenangan</title>
+    <title>{title}</title>
 </svelte:head>
 
 <Hero />

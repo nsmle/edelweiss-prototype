@@ -17,7 +17,12 @@ const config = {
             ? vercelAdapter({
                   runtime: 'edge'
               })
-            : bunAdapter()
+            : bunAdapter(),
+
+        alias: {
+            '$utils/*': 'src/utils/*',
+            '$assets/*': 'static/*'
+        }
     }
 };
 

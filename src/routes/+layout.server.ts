@@ -1,0 +1,87 @@
+import { VERCEL } from '$env/static/private';
+import type { LayoutServerLoad } from './$types';
+
+interface LayoutData {
+    brand: {
+        name: string;
+        siteName: string;
+        motto: string;
+        description: string;
+    };
+    isLocal: boolean;
+    footer: {
+        navigations: Array<{
+            label: string;
+            items: Array<{ title: string; url: string }>;
+        }>;
+        socials: {
+            twitter: string;
+            instagram: string;
+            linkedin: string;
+            youtube: string;
+        };
+        copyright: {
+            holder: string;
+            year: number;
+            link: string;
+        };
+    };
+}
+
+export const load: LayoutServerLoad<LayoutData> = async () => {
+    return {
+        brand: {
+            name: 'Edelweiss',
+            siteName: 'Edelweiss Photobooth',
+            motto: 'Ciptakan moment, abadikan kenangan',
+            description:
+                'Ciptakan moment dan abadikan kenangan, teman pendamping setiap moment penting mu dengan layanan yang terbaik dan terpercaya.'
+        },
+        isLocal: process.env.NODE_ENV === 'development' || !VERCEL,
+        footer: {
+            navigations: [
+                {
+                    label: 'Layanan',
+                    items: [
+                        { title: 'Jelajahi Layanan', url: '/service' },
+                        { title: 'Jelajahi Gallery', url: '/gallery' },
+                        { title: 'Layanan Terbaru', url: '/service#latest' },
+                        { title: 'Layanan Terpopuler', url: '/service#popular' },
+                        { title: 'Layanan Terbaik', url: '/service#best' }
+                    ]
+                },
+                {
+                    label: 'Tentang Kami',
+                    items: [
+                        { title: 'Testimoni', url: '/about#testimonials' },
+                        { title: 'Berita', url: '/about#news' },
+                        { title: 'Blog', url: '/blog' },
+                        { title: 'Kisah Kami', url: '/about#story' },
+                        { title: 'Tentang Kami', url: '/about' }
+                    ]
+                },
+                {
+                    label: 'Dukungan',
+                    items: [
+                        { title: 'Bantuan', url: '/help' },
+                        { title: 'Syarat & Ketentuan', url: '/terms' },
+                        { title: 'Kebijakan Privasi', url: '/privacy' },
+                        { title: 'Kebijakan Cookie', url: '/cookie' },
+                        { title: 'Kontak Kami', url: '/contact' }
+                    ]
+                }
+            ],
+            socials: {
+                twitter: 'nsmle_',
+                instagram: 'nsmle_',
+                linkedin: 'fikipratama',
+                youtube: 'nsmle'
+            },
+            copyright: {
+                holder: 'nsmle Lab',
+                year: new Date().getFullYear(),
+                link: 'https://github.com/nsmle/edelweiss-prototype'
+            }
+        }
+    };
+};
