@@ -5,10 +5,10 @@
       "name": "edelweiss-prototype",
       "dependencies": {
         "@prisma/client": "^6.11.0",
+        "@prisma/extension-accelerate": "^2.0.1",
         "@sveltejs/adapter-vercel": "^5.7.2",
         "@vercel/analytics": "^1.5.0",
         "@vercel/speed-insights": "^1.2.0",
-        "hash-wasm": "^4.12.0",
       },
       "devDependencies": {
         "@sveltejs/kit": "^2.21.3",
@@ -112,6 +112,8 @@
     "@prisma/engines": ["@prisma/engines@6.11.0", "", { "dependencies": { "@prisma/debug": "6.11.0", "@prisma/engines-version": "6.11.0-18.9c30299f5a0ea26a96790e13f796dc6094db3173", "@prisma/fetch-engine": "6.11.0", "@prisma/get-platform": "6.11.0" } }, "sha512-uqnYxvPKZPvYZA7F0q4gTR+fVWUJSY5bif7JAKBIOD5SoRRy0qEIaPy4Nna5WDLQaFGshaY/Bh8dLOQMfxhJJw=="],
 
     "@prisma/engines-version": ["@prisma/engines-version@6.11.0-18.9c30299f5a0ea26a96790e13f796dc6094db3173", "", {}, "sha512-M3vbyDICFIA1oJl0cFkM0omD4HsJZjFi0hu0f0UxyPABH8KEcZyUd5BToCrNl4B8lUeQn+L5+gfaQleOKp6Lrg=="],
+
+    "@prisma/extension-accelerate": ["@prisma/extension-accelerate@2.0.1", "", { "peerDependencies": { "@prisma/client": ">=4.16.1" } }, "sha512-KSQlLC5F1qxFQCqSP8SnCwhkv9SE40v8WR+UjHdRce0R7Fv/K3IfJJNANGFx5MNoOypK1VN6wfvRr6CNA/l+BQ=="],
 
     "@prisma/fetch-engine": ["@prisma/fetch-engine@6.11.0", "", { "dependencies": { "@prisma/debug": "6.11.0", "@prisma/engines-version": "6.11.0-18.9c30299f5a0ea26a96790e13f796dc6094db3173", "@prisma/get-platform": "6.11.0" } }, "sha512-ZHHSP7vJFo5hePH+MNovxhqXabIg38ZpCwQfUBON29kwPX3f1pjYnzGpgJLCJy4k7mKGOzTgrXPqH8+nJvq2fw=="],
 
@@ -290,8 +292,6 @@
     "globrex": ["globrex@0.1.2", "", {}, "sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg=="],
 
     "graceful-fs": ["graceful-fs@4.2.11", "", {}, "sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ=="],
-
-    "hash-wasm": ["hash-wasm@4.12.0", "", {}, "sha512-+/2B2rYLb48I/evdOIhP+K/DD2ca2fgBjp6O+GBEnCDk2e4rpeXIK8GvIyRPjTezgmWn9gmKwkQjjx6BtqDHVQ=="],
 
     "https-proxy-agent": ["https-proxy-agent@7.0.6", "", { "dependencies": { "agent-base": "^7.1.2", "debug": "4" } }, "sha512-vK9P5/iUfdl95AI+JVyUuIcVtd4ofvtrOr3HNtM2yxC9bnMbEdp3x01OhQNnjb8IJYi38VlTE3mBXwcfvywuSw=="],
 

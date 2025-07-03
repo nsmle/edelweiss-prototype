@@ -1,11 +1,12 @@
 import { PrismaClient } from '@prisma/client/edge';
+import { withAccelerate } from '@prisma/extension-accelerate';
 
 let database: PrismaClient;
 if (process.env.NODE_ENV === 'production') {
     database = new PrismaClient();
 } else {
     let g = global as any;
-    if (!g.database) g.database = new PrismaClient();
+    if (!g.database) g.database = new PrismaClient().$extends(withAccelerate());
     database = g.database;
 }
 
