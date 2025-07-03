@@ -1,9 +1,9 @@
 import { GRAVATAR_APIKEY } from '$env/static/private';
-import crypto from 'crypto';
+import { sha256 } from 'hash-wasm';
 
 export const getGravatarProfile = async (email: string) => {
     const normalizedEmail = email.trim().toLowerCase();
-    const emailHash = crypto.createHash('sha256').update(normalizedEmail).digest('hex');
+    const emailHash = await sha256(normalizedEmail);
 
     try {
         const response = await fetch(`https://api.gravatar.com/v3/profiles/${emailHash}`, {
