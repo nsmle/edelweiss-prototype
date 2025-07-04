@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { afterNavigate } from '$app/navigation';
     import { page } from '$app/state';
     import Footer from '$lib/footer.svelte';
     import Header from '$lib/header.svelte';
@@ -9,24 +10,23 @@
 
     const props = $props();
     const { children } = props;
-
-    const { isProduction, brand } = page.data;
+    const { isProduction, brand, logToken } = page.data;
 
     if (isProduction) {
         injectAnalytics();
         injectSpeedInsights();
     }
 
-    onMount(() => {
-        if (props?.data?.logContent?.length) {
-            fetch('/?/log', {
+    const log = async (): Promise<void> => {
+        if (isProduction)
+            await fetch('/log', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'text/plain'
-                },
-                body: props.data.logContent
+                headers: { 'Content-Type': 'application/vnd+nsmle.dicea+log', Authorization: `Bearer ${logToken}` }
             });
-        }
+    };
+
+    onMount((): void => {
+        afterNavigate((): Promise<void> => log());
     });
 </script>
 

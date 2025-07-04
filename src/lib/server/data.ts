@@ -80,5 +80,5 @@ export const layoutData = {
 
 export type LayoutData = typeof layoutData & {
     isProduction: boolean;
-    logContent: string;
+    logToken: string;
 };
