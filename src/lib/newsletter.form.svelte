@@ -125,7 +125,7 @@
 
         <div class="flex h-auto w-full flex-col items-center gap-y-3 text-start sm:flex-row sm:justify-between">
             <span
-                class={`ml-1 w-full text-start font-sans leading-normal font-normal transition-all duration-300 ease-in-out ${newsletters.type?.length ? 'text-xs' : 'sm:text-sm/8'} ${
+                class={`ml-1 w-full text-start font-sans leading-normal font-normal transition-all duration-300 ease-in-out ${newsletters.type?.length ? 'text-xs' : 'text-xs sm:text-sm/8'} ${
                     newsletters.type === 'incorrect' || newsletters.type === 'error'
                         ? 'text-rose-600/90'
                         : newsletters.type === 'allready'
@@ -142,7 +142,7 @@
                 type="button"
                 aria-labelledby="Kirim Pesan"
                 onclick={(e): Promise<void> => subscribe(e.currentTarget)}
-                class="ring-primary-200/20 focus:ring-primary-200/50 flex w-full cursor-pointer flex-row items-center gap-x-3 rounded-lg bg-gradient-to-br from-green-400 via-green-500 to-green-500 px-10 py-2.5 text-center text-base font-medium text-nowrap text-white ring-4 transition-all duration-300 ease-in-out outline-none hover:from-green-300 hover:via-green-400 hover:to-green-500 disabled:cursor-wait disabled:opacity-50 disabled:shadow-none sm:w-auto sm:rounded-full sm:text-base"
+                class="ring-primary-200/20 focus:ring-primary-200/50 flex w-full cursor-pointer flex-row items-center justify-center gap-x-3 rounded-lg bg-gradient-to-br from-green-400 via-green-500 to-green-500 px-10 py-2.5 text-center text-center text-base font-medium text-nowrap text-white ring-4 transition-all duration-300 ease-in-out outline-none hover:from-green-300 hover:via-green-400 hover:to-green-500 disabled:cursor-wait disabled:opacity-50 disabled:shadow-none sm:w-auto sm:rounded-full sm:text-base"
                 disabled={newsletters.loading}
             >
                 {#if newsletters.loading}

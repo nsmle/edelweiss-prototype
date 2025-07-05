@@ -62,7 +62,7 @@
                 <div class="order-last mt-10 hidden items-center justify-start sm:flex">
                     <a
                         href="/testimoni"
-                        class="w-full cursor-pointer rounded-full border border-gray-400 px-6 py-2.5 text-center text-base font-medium text-gray-700 backdrop-blur-2xl backdrop-brightness-105 transition-all duration-300 ease-in-out outline-none hover:border-green-400 hover:bg-gradient-to-br hover:from-green-300 hover:via-green-400 hover:to-green-500 hover:text-white hover:ring-4 hover:ring-green-200/20 focus:ring-4 focus:ring-green-200/50 sm:w-auto sm:text-xl"
+                        class="w-full cursor-pointer rounded-full border border-gray-400 px-8 py-2.5 text-center text-sm font-medium text-gray-700 backdrop-blur-2xl backdrop-brightness-105 transition-all duration-300 ease-in-out outline-none hover:border-green-400 hover:bg-gradient-to-br hover:from-green-300 hover:via-green-400 hover:to-green-500 hover:text-white hover:ring-4 hover:ring-green-200/20 focus:ring-4 focus:ring-green-200/50 sm:w-auto sm:text-lg"
                         >Tambahkan Testimoni</a
                     >
                 </div>
@@ -138,7 +138,7 @@
     <div class="order-last -mt-6 flex max-w-7xl items-center justify-start px-4 sm:hidden">
         <a
             href="/testimoni"
-            class="w-full cursor-pointer rounded-full border border-gray-400 px-6 py-2.5 text-center text-base font-medium text-gray-700 backdrop-blur-2xl backdrop-brightness-105 transition-all duration-300 ease-in-out outline-none hover:border-green-400 hover:bg-gradient-to-br hover:from-green-300 hover:via-green-400 hover:to-green-500 hover:text-white hover:ring-4 hover:ring-green-200/20 focus:ring-4 focus:ring-green-200/50 sm:w-auto sm:text-xl"
+            class="w-full cursor-pointer rounded-full border border-gray-400 px-6 py-2.5 text-center text-sm font-medium text-gray-700 backdrop-blur-2xl backdrop-brightness-105 transition-all duration-300 ease-in-out outline-none hover:border-green-400 hover:bg-gradient-to-br hover:from-green-300 hover:via-green-400 hover:to-green-500 hover:text-white hover:ring-4 hover:ring-green-200/20 focus:ring-4 focus:ring-green-200/50 sm:w-auto sm:text-base"
             >Tambahkan Testimoni</a
         >
     </div>

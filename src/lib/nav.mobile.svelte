@@ -91,7 +91,7 @@
                 <div class="py-6">
                     <a
                         href="/booking"
-                        class="bg-primary-500 hover:text-primary-600 -mx-3 block rounded-4xl px-3 py-2.5 text-center text-base/7 font-semibold text-gray-900"
+                        class="focus:ring-primary-200 flex w-full cursor-pointer items-center justify-center rounded-full bg-gradient-to-br from-green-400 via-green-500 to-green-500 px-5 py-2.5 text-center text-base font-medium text-white transition-all duration-300 ease-in-out hover:from-green-300 hover:via-green-400 hover:to-green-500 focus:ring-4 focus:outline-none"
                         >Booking Sekarang</a
                     >
                 </div>
