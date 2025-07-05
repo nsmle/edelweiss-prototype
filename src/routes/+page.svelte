@@ -148,7 +148,7 @@
 
 <svelte:head>
     <title>{data.title}</title>
-    <link rel="preload" fetchpriority="high" as="image" href={`${page.url.origin}/hero-image.webp`} type="image/webp" />
+    <link rel="preload" fetchpriority="high" as="image" href="/hero-image.webp" type="image/webp" />
 </svelte:head>
 
 <Hero />
