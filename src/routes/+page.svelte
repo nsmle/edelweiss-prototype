@@ -205,7 +205,7 @@
             </p>
             <div class="order-last mt-4 flex items-center justify-start sm:mt-10">
                 <a
-                    href="/contact"
+                    href="/about/#contact-us"
                     class="ring-primary-200/20 focus:ring-primary-200/50 w-full cursor-pointer rounded-full bg-gradient-to-br from-green-400 via-green-500 to-green-500 px-6 py-2.5 text-center text-base font-medium text-white ring-4 transition-all duration-300 ease-in-out outline-none hover:from-green-300 hover:via-green-400 hover:to-green-500 sm:w-auto sm:text-xl"
                     >Hubungi Kami</a
                 >
@@ -427,7 +427,7 @@
                 class="mx-auto mt-8 flex w-full flex-col justify-center gap-y-2 sm:mt-10 sm:flex-row sm:gap-x-4 sm:px-4"
             >
                 <a
-                    href="/contact"
+                    href="/about/#contact-us"
                     class="w-full cursor-pointer rounded-lg border border-gray-400 px-5.5 py-2 text-center text-base font-medium text-nowrap text-gray-700 backdrop-blur-2xl backdrop-brightness-105 transition-all duration-300 ease-in-out outline-none hover:border-green-400 hover:bg-gradient-to-br hover:from-green-300 hover:via-green-400 hover:to-green-500 hover:text-white hover:ring-4 hover:ring-green-200/20 focus:ring-4 focus:ring-green-200/50 sm:w-auto sm:rounded-full sm:text-xl"
                     >Hubungi Kami</a
                 >

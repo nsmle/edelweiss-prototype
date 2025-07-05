@@ -25,8 +25,8 @@ export const layoutData = {
                 url: '/about'
             },
             {
-                title: 'Kontak Kami',
-                url: '/contact'
+                title: 'Testimoni',
+                url: '/testimonials'
             }
         ]
     },
@@ -45,10 +45,10 @@ export const layoutData = {
             {
                 label: 'Tentang Kami',
                 items: [
-                    { title: 'Testimoni', url: '/about#testimonials' },
-                    { title: 'Berita', url: '/about#news' },
-                    { title: 'Blog', url: '/blog' },
-                    { title: 'Kisah Kami', url: '/about#story' },
+                    { title: 'Testimoni', url: '/testimonials' },
+                    { title: 'Berita', url: '/about/#news' },
+                    { title: 'Kontak Kami', url: '/about/#contact' },
+                    { title: 'Kisah Kami', url: '/about/#stories' },
                     { title: 'Tentang Kami', url: '/about' }
                 ]
             },
@@ -59,7 +59,7 @@ export const layoutData = {
                     { title: 'Syarat & Ketentuan', url: '/terms' },
                     { title: 'Kebijakan Privasi', url: '/privacy' },
                     { title: 'Kebijakan Cookie', url: '/cookie' },
-                    { title: 'Kontak Kami', url: '/contact' }
+                    { title: 'Hubungi Kami', url: '/about/#contact-us' }
                 ]
             }
         ],
@@ -75,6 +75,10 @@ export const layoutData = {
             year: new Date().getFullYear(),
             link: 'https://github.com/nsmle/edelweiss-prototype'
         }
+    },
+    video: {
+        id: 'm9FmY9KgfG4',
+        playlist: 'PLT3PaeByruw3yoalfpmGfSFgmMCCSXI61'
     }
 };
 

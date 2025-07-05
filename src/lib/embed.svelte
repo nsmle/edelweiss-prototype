@@ -6,6 +6,8 @@
     let player: any = $state(null);
 
     const playerStateChange = ({ data }: any): void => {
+        if (data === -1 && playerState !== 'UNSTARTED')
+            localStorage.setItem('video-playlist-index', (player?.getPlaylistIndex() ?? 0)?.toString());
         switch (data) {
             case -1:
                 playerState = 'UNSTARTED';
@@ -33,13 +35,14 @@
     };
 
     const onYouTubeIframeAPIReady = (YT: any): void => {
+        if (!YT) return;
         player = new YT.Player('video', {
             height: 'auto',
             width: 'auto',
-            videoId: 'm9FmY9KgfG4',
+            videoId: page.data?.video?.id,
             playerVars: {
                 color: '#4ac63f',
-                list: 'PLT3PaeByruw3yoalfpmGfSFgmMCCSXI61',
+                ...(page.data?.video?.playlist ? { list: page.data.video.playlist } : {}),
                 vq: 'small',
                 mute: 0,
                 playsinline: 0,
@@ -47,10 +50,12 @@
                 iv_load_policy: 3,
                 cc_load_policy: 0,
                 controls: 1,
-                fs: 1,
+                index: 1,
+                fs: 0,
                 disablekb: 0,
                 start: 0,
                 showinfo: 0,
+                loop: 1,
                 widget_referrer: page?.url?.origin,
                 origin: page?.url?.origin
             },
@@ -69,7 +74,12 @@
     };
 
     const play = (): void => {
-        player?.playVideo();
+        const playlistVideoIndex = localStorage.getItem('video-playlist-index');
+        if (page.data?.video?.playlist && playlistVideoIndex?.length) {
+            player.loadPlaylist(page.data.video.playlist, Number(playlistVideoIndex), 0);
+        } else {
+            player?.playVideo();
+        }
         if (player?.isMuted) player?.unMute();
     };
 

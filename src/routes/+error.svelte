@@ -6,7 +6,7 @@
     <title>{page?.error?.message || 'Page not found'} - Edelweiss Photobooth</title>
 </svelte:head>
 
-<div class="bg-[oklch(99.135% 0.00143 285.193)] relative isolate flex min-h-screen w-full">
+<div class="bg-[oklch(99.135% 0.00143 285.193)] relative isolate -mb-[13%] flex min-h-screen w-full">
     <div class="absolute inset-x-0 -top-40 -z-40 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
         <div
             class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#9089fc] to-[#c7f0c2] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"
@@ -37,13 +37,14 @@
                     Sorry, we couldn’t find the page you’re looking for.
                 </p>
                 <div class="mt-10 flex flex-col items-center justify-center gap-2 gap-x-6 sm:flex-row sm:gap-4">
-                    <a
-                        href="/"
-                        class="bg-primary-400 hover:bg-primary-500 focus-visible:outline-primary-600 w-full rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 sm:w-auto"
-                        >Back to home</a
+                    <button
+                        type="button"
+                        onclick={(): void => history.back()}
+                        class="bg-primary-400 hover:bg-primary-500 focus-visible:outline-primary-600 w-full cursor-pointer rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 sm:w-auto"
+                        >Back to previous page</button
                     >
                     <a
-                        href="/contact"
+                        href="/about/#contact-us"
                         class="bg-primary-100 w-full px-3.5 py-2.5 text-sm font-semibold text-gray-700 sm:w-auto sm:bg-transparent sm:p-0"
                         >Contact support <span aria-hidden="true">&rarr;</span></a
                     >

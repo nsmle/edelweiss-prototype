@@ -17,15 +17,20 @@ export async function POST(event: RequestEvent): Promise<Response> {
         return response(400, 'incorrect', 'Unsupported Media Type');
 
     try {
-        const email = await event.request.json().then((data): string => data.email?.toString()?.trim() || '');
+        const data = await event.request.json();
+        const email: string = data.email?.toString()?.trim() || '';
+        const message = data.message?.toString()?.trim() || '';
 
-        const emailExists = await db.getNewsletterEmail(email);
-        if (emailExists) {
-            const message = emailExists?.name?.length
-                ? `${emailExists.name} kamu udah terdaftar, kami akan kirim email saat ada update.`
-                : `${email} udah terdaftar, kami akan kirim email saat ada update.`;
-            return response(409, 'allready', message);
+        const newsletterExists = await db.getNewsletterEmail(email);
+        if (!message?.length) {
+            if (newsletterExists) {
+                const msg = newsletterExists?.name?.length
+                    ? `${newsletterExists.name} kamu udah terdaftar, kami akan kirim email saat ada update.`
+                    : `${email} udah terdaftar, kami akan kirim email saat ada update.`;
+                return response(409, 'allready', msg);
+            }
         }
+
         let profile = await getGravatarProfile(email);
         if (profile?.error) {
             const { id, username, password } = await db.getAvatarApiApikey();
@@ -34,10 +39,54 @@ export async function POST(event: RequestEvent): Promise<Response> {
         }
 
         let name = profile?.name ?? profile?.display_name;
+        if (newsletterExists) {
+            const updated = await db.connection.newsletter.update({
+                where: { email },
+                data: {
+                    name: name,
+                    message: message?.length ? message : newsletterExists.message,
+                    alternativeEmail: profile?.contact_info?.email
+                        ? profile.contact_info.email
+                        : newsletterExists.alternativeEmail,
+                    image: (profile?.image || profile?.avatar_url) ?? newsletterExists.image,
+                    phone:
+                        (profile?.contact_info?.home_phone ||
+                            profile?.contact_info?.work_phone ||
+                            profile?.contact_info?.cell_phone) ??
+                        newsletterExists.phone,
+                    location: profile?.location?.length ? profile.location : newsletterExists.location,
+                    jobTitle: profile?.job_title?.length ? profile.job_title : newsletterExists.jobTitle,
+                    rawProfile:
+                        profile?.rawData ??
+                        (!profile?.error && profile?.hash ? JSON.stringify(profile) : newsletterExists.rawProfile),
+                    sourceProfile:
+                        profile?.rawDataSource ??
+                        (!profile?.error && profile?.hash ? 'Gravatar' : newsletterExists.sourceProfile)
+                }
+            });
+            if (!updated) {
+                console.error(`Failed to update email ${email} in newsletter list: `, { email, profile, updated });
+                return response(500, 'error', 'Gagal memperbarui email di daftar newsletter kami, silakan coba lagi!');
+            }
+
+            if (message?.length) {
+                const msg = name?.length
+                    ? `Halo ${name}, pesanmu berhasil dikirim ke tim kami!`
+                    : `Pesanmu berhasil dikirim ke tim kami!`;
+                return response(200, 'success', msg);
+            }
+
+            const msg = name?.length
+                ? `Halo ${name}, kamu berhasil subscribe ke newsletter kami!`
+                : `Email ${email} berhasil subscribe ke newsletter kami!`;
+            return response(200, 'success', msg);
+        }
+
         const created = await db.connection.newsletter.create({
             data: {
                 name: name,
                 email: email,
+                message: message?.length ? message : null,
                 alternativeEmail: profile?.contact_info?.email ? profile.contact_info.email : null,
                 image: (profile?.image || profile?.avatar_url) ?? null,
                 phone:
@@ -57,10 +106,10 @@ export async function POST(event: RequestEvent): Promise<Response> {
             return response(500, 'error', 'Gagal menambahkan email ke daftar newsletter kami, silakan coba lagi!');
         }
 
-        const message = name?.length
+        const msg = name?.length
             ? `Halo ${name}, kamu berhasil ditambahkan ke daftar newsletter kami!`
             : `Email ${email} berhasil ditambahkan ke daftar newsletter kami!`;
-        return response(400, 'success', message);
+        return response(400, 'success', msg);
     } catch (error) {
         console.error('Error adding email to newsletter:', error);
         return response(500, 'error', 'Gagal menambahkan email ke daftar newsletter kami, silakan coba lagi!');
