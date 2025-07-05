@@ -11,6 +11,7 @@
                     class="h-full w-full object-cover object-[40%_-10vh]"
                     loading="lazy"
                     decoding="async"
+                    fetchpriority="high"
                 />
             </div>
             <div class="overlay absolute inset-0 h-full w-full rounded-t-2xl"></div>
