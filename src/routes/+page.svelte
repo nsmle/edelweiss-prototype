@@ -5,6 +5,7 @@
     import StackFavorite from '$lib/stack.favorite.svelte';
     import StackRecommendation from '$lib/stack.recommendation.svelte';
     import type { PageData } from './$types';
+    import { page } from '$app/state';
 
     export let data: PageData;
 
@@ -147,6 +148,7 @@
 
 <svelte:head>
     <title>{data.title}</title>
+    <link rel="preload" fetchpriority="high" as="image" href={`${page.url.origin}/hero-image.webp`} type="image/webp" />
 </svelte:head>
 
 <Hero />
