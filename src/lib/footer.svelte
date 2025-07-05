@@ -1,17 +1,58 @@
 <script lang="ts">
-    import { enhance } from '$app/forms';
     import { page } from '$app/state';
 
-    let isLoadingNewsletter = false;
-    let newsletters: { type: 'allready' | 'incorrect' | 'error' | 'success' | null; reason: string | null } = {
+    let newsletterEmail = $state('');
+    let newsletters: {
+        type: 'allready' | 'incorrect' | 'error' | 'success' | null;
+        reason: string | null;
+        loading: boolean;
+    } = $state({
         type: null,
-        reason: null
-    };
+        reason: null,
+        loading: false
+    });
 
     const data = page.data.footer;
     const navigations = data.navigations;
     const copyright = data.copyright;
     const socials = data.socials;
+
+    const subscribe = async (submitter: HTMLButtonElement): Promise<void> => {
+        const reset = (isReset: boolean = false): void => {
+            setTimeout((): void => {
+                newsletters = { type: null, reason: null, loading: false };
+                if (isReset) newsletterEmail = '';
+            }, 10000);
+        };
+
+        if (newsletterEmail.trim() === '') {
+            newsletters = { type: 'incorrect', reason: 'Email tidak boleh kosong', loading: false };
+            return reset();
+        }
+
+        if (!newsletterEmail.trim().includes('@')) {
+            newsletters = { type: 'incorrect', reason: 'Email tidak valid', loading: false };
+            return reset();
+        }
+
+        console.log('Adding to newsletters...');
+        console.log(`Email: ${newsletterEmail}`);
+
+        newsletters = { type: null, reason: null, loading: true };
+        submitter?.blur();
+
+        const response = await fetch(`${page.url.origin}/api/newsletter`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email: newsletterEmail })
+        });
+        const data = await response.json();
+
+        newsletters = { type: data.status, reason: data.message, loading: false };
+        return reset(true);
+    };
 </script>
 
 <footer
@@ -59,32 +100,15 @@
                     terbaik dan terpercaya.
                 </p>
 
-                <form
-                    class="group/newsletter mx-auto transition-all duration-300 ease-in-out"
-                    action="/?/newsletter"
-                    method="POST"
-                    use:enhance={({ formElement, formData, action, cancel, submitter }) => {
-                        isLoadingNewsletter = true;
-                        submitter?.blur();
-                        return async ({ result, update }) => {
-                            const data = (result as any)?.data;
-                            if (data) newsletters = data?.data;
-
-                            isLoadingNewsletter = false;
-                            await update({ reset: true, invalidateAll: true });
-                            setTimeout(() => {
-                                newsletters = { type: null, reason: null };
-                                formElement.reset();
-                            }, 10000);
-                        };
-                    }}
-                >
+                <div class="group/newsletter mx-auto transition-all duration-300 ease-in-out">
                     <div class="flex w-full">
-                        <label for="default-search" class="sr-only mb-2 text-sm font-medium text-gray-900"
+                        <label for="newsletter-email" class="sr-only mb-2 text-sm font-medium text-gray-900"
                             >Dapatkan update</label
                         >
                         <div class="relative w-full md:max-w-md lg:max-w-sm">
-                            <div class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-4">
+                            <div
+                                class={`pointer-events-none absolute inset-y-0 start-0 flex items-center ps-4 ${newsletters.loading ? 'animate-pulse' : ''}`}
+                            >
                                 <svg
                                     class="h-4 w-4 text-gray-400"
                                     aria-hidden="true"
@@ -103,50 +127,66 @@
                             <input
                                 type="email"
                                 name="email"
+                                id="newsletter-email"
                                 class="block w-full rounded-full border border-gray-300 bg-gray-50 p-3 ps-10 text-sm text-gray-900 placeholder:font-medium focus:border-green-500/60 focus:ring-4 focus:ring-green-400/10 focus:outline-none disabled:cursor-wait"
                                 placeholder="Dapatkan update"
                                 aria-label="Dapatkan update"
-                                disabled={isLoadingNewsletter}
+                                disabled={newsletters.loading}
+                                bind:value={newsletterEmail}
                                 autocomplete="email"
                                 required
                             />
                             <button
-                                type="submit"
+                                type="button"
                                 aria-labelledby="Subscribe"
-                                class="absolute end-1.5 bottom-[5px] cursor-pointer rounded-full bg-green-500/70 p-2.5 text-sm font-medium text-white group-active/newsletter:bg-green-500 hover:bg-green-400 focus:ring-4 focus:ring-green-400/10 focus:outline-none disabled:cursor-wait disabled:bg-gray-300"
-                                disabled={isLoadingNewsletter}
-                                ><svg
-                                    class="size-4 rtl:rotate-180"
-                                    aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 14 10"
-                                >
-                                    <path
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M1 5h12m0 0L9 1m4 4L9 9"
-                                    />
-                                </svg></button
+                                class="absolute end-1.5 bottom-[5px] cursor-pointer rounded-full bg-green-500/70 p-2.5 text-sm font-medium text-white group-active/newsletter:bg-green-500 hover:bg-green-400 focus:ring-4 focus:ring-green-400/10 focus:outline-none disabled:cursor-wait disabled:bg-green-500/50"
+                                disabled={newsletters.loading}
+                                onclick={(e): Promise<void> => subscribe(e.currentTarget)}
                             >
+                                {#if newsletters.loading}
+                                    <span class="relative isolate flex size-4">
+                                        <span
+                                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-100 opacity-70"
+                                        ></span>
+                                        <span
+                                            class="relative mx-auto my-auto inline-flex size-3 rounded-full bg-green-200"
+                                        ></span>
+                                    </span>
+                                {:else}
+                                    <svg
+                                        class="size-4 rtl:rotate-180"
+                                        aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 14 10"
+                                    >
+                                        <path
+                                            stroke="currentColor"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M1 5h12m0 0L9 1m4 4L9 9"
+                                        />
+                                    </svg>
+                                {/if}
+                            </button>
                         </div>
                     </div>
-                    {#if newsletters.type == 'success'}
-                        <span class="font-inter mt-2 ml-2 inline-flex w-full text-xs text-green-600/80"
-                            >{newsletters.reason}</span
-                        >
-                    {:else if newsletters.type == 'allready'}
-                        <span class="font-inter mt-2 ml-2 inline-flex w-full text-xs text-yellow-600/80"
-                            >{newsletters.reason}</span
-                        >
-                    {:else if newsletters.type == 'incorrect' || newsletters.type == 'error'}
-                        <span class="font-inter mt-2 ml-2 inline-flex w-full text-xs text-rose-600/80"
-                            >{newsletters.reason}</span
-                        >
-                    {/if}
-                </form>
+                    <span
+                        class={`font-inter mt-1 ml-2 inline-flex w-full text-xs text-green-600/80 transition-all duration-300 ease-in-out ${
+                            newsletters.type === null
+                                ? '-z-50 size-0 -translate-y-10 opacity-0'
+                                : 'z-0 translate-0 opacity-100'
+                        }
+                        ${
+                            newsletters.type === 'incorrect' || newsletters.type === 'error'
+                                ? 'text-rose-600/80'
+                                : newsletters.type === 'allready'
+                                  ? 'text-yellow-600/80'
+                                  : ''
+                        }`}>{newsletters.reason}</span
+                    >
+                </div>
             </div>
 
             {#each navigations as nav}

@@ -42,7 +42,6 @@
         "@prisma/client": "^6.11.0",
         "@prisma/extension-accelerate": "^2.0.1",
         "@sveltejs/adapter-vercel": "^5.7.2",
-        "@sveltejs/amp": "^1.1.4",
         "@vercel/analytics": "^1.5.0",
         "@vercel/speed-insights": "^1.2.0"
     }

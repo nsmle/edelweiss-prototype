@@ -54,7 +54,9 @@
                 >
                     Testimoni
                 </h1>
-                <h1 class="text-3xl font-semibold tracking-tight text-balance text-gray-800/90 sm:text-6xl">
+                <h1
+                    class="text-6xl font-semibold tracking-tight text-balance text-gray-800/90 max-xl:text-5xl max-sm:text-3xl"
+                >
                     Apa kata mereka tentang kami
                 </h1>
                 <div class="order-last mt-10 hidden items-center justify-start sm:flex">
@@ -108,7 +110,7 @@
         <div class="no-scrollbar flex w-full flex-row gap-3 overflow-auto pt-4 pb-16 sm:gap-4 sm:pt-12">
             {#each testimonials as testimonial, index}
                 <button
-                    class={`${index == activeTestimonialIndex ? 'bg-white shadow-2xl ring-4  shadow-blue-900/15 ring-green-500/5 sm:shadow-blue-900/30' : 'bg-clean-500/30 hover:bg-clean-500/50 shadow-lg shadow-blue-900/5'} flex min-w-fit cursor-pointer items-center justify-center rounded-xl backdrop-blur-md backdrop-brightness-105 ${index == 0 ? 'ml-4 sm:ml-26' : ''} ${index == testimonials.length - 1 ? 'mr-4 sm:mr-26' : ''}`}
+                    class={`${index == activeTestimonialIndex ? 'bg-white shadow-2xl ring-4  shadow-blue-900/15 ring-green-500/5 sm:shadow-blue-900/30' : 'bg-clean-500/30 hover:bg-clean-500/50 shadow-lg shadow-blue-900/5'} flex min-w-fit cursor-pointer items-center justify-center rounded-xl backdrop-blur-md backdrop-brightness-105 ${index == 0 ? 'ml-4 md:ml-8 xl:ml-26 2xl:ml-[25vw]' : ''} ${index == testimonials.length - 1 ? 'mr-4 md:mr-8 xl:mr-26 2xl:mr-[25vw]' : ''}`}
                     on:click={(): number => (activeTestimonialIndex = index)}
                 >
                     <div class="flex w-full items-center justify-center px-5.5 py-3.5">

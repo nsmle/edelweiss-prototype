@@ -10,6 +10,11 @@
 }
 
 @theme inline {
+    --breakpoint-3xl: 120rem;
+    --breakpoint-4xl: 144rem;
+    --breakpoint-5xl: 168rem;
+    --breakpoint-6xl: 192rem;
+
     --color-canvas: var(--acme-canvas-color);
 
     --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
@@ -101,4 +106,8 @@ body {
 
 .no-scrollbar::-webkit-scrollbar {
     display: none; /* Chrome, Safari, and Opera */
+}
+
+.aspect-potrait {
+    aspect-ratio: 9 / 16;
 }

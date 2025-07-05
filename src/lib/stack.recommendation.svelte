@@ -25,11 +25,11 @@
 <div class="relative isolate flex w-full flex-col">
     <div
         bind:this={carousel}
-        class="no-scrollbar mt-4 flex w-full min-w-full flex-row gap-x-3 overflow-x-auto sm:gap-x-6"
+        class="no-scrollbar relative isolate mt-4 flex w-full min-w-full flex-row gap-x-3 overflow-x-auto sm:gap-x-6"
     >
         {#each services as service, index}
             <div
-                class={`w-xl rounded-t-2xl sm:rounded-t-3xl ${index == 0 ? 'ml-4 sm:ml-26' : ''} ${index == services.length - 1 ? 'mr-4 sm:mr-26' : ''}`}
+                class={`relative w-xl rounded-t-2xl sm:rounded-t-3xl ${index == 0 ? 'ml-4 md:ml-8 xl:ml-26 2xl:ml-[25vw]' : ''} ${index == services.length - 1 ? 'mr-4 md:mr-8 xl:mr-26 2xl:mr-[25vw]' : ''}`}
             >
                 <a href={`/service/${service.slug}`}>
                     <img
@@ -73,6 +73,14 @@
             </div>
         {/each}
     </div>
+    <div
+        class="overlay-to-right absolute top-0 left-0 my-auto hidden h-100 pl-4 blur sm:block md:pl-8 xl:pl-26 2xl:pl-[25vw]"
+        style="background: linear-gradient(to right, oklch(99.135% 0.00143 285.193), rgba(255, 255, 255, 0) 85%)"
+    ></div>
+    <div
+        class="overlay-to-right absolute top-0 right-0 my-auto hidden h-100 pr-4 blur sm:block md:pr-8 xl:pr-26 2xl:pr-[25vw]"
+        style="background: linear-gradient(to left, oklch(99.135% 0.00143 285.193), rgba(255, 255, 255, 0) 80%)"
+    ></div>
     <div class="mx-auto flex w-full max-w-7xl justify-between px-4 sm:px-12">
         <button
             type="button"

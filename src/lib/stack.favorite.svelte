@@ -77,7 +77,7 @@
         {#each services as service, index}
             <div class={`max-h-xl flex w-fit flex-col items-center  justify-center`}>
                 <div
-                    class={`${index == 0 ? 'ml-4 sm:ml-26' : ''} ${index + 1 == services.length ? 'mr-4 sm:mr-26' : ''} ${index == 1 || (index % 4 == 0 && index !== 0) ? 'min-w-92 sm:min-w-120' : 'min-w-64 sm:min-w-72'} rounded-3xl`}
+                    class={`${index == 0 ? 'ml-4 md:ml-8 xl:ml-26 2xl:ml-[25vw]' : ''} ${index + 1 == services.length ? 'mr-4 md:mr-8 xl:mr-26 2xl:mr-[25vw]' : ''} ${index == 1 || (index % 4 == 0 && index !== 0) ? 'min-w-92 sm:min-w-120' : 'min-w-64 sm:min-w-72'} rounded-3xl`}
                 >
                     <div
                         class="relative isolate h-64 rounded-3xl bg-cover bg-center bg-no-repeat shadow-md"
@@ -105,4 +105,13 @@
             </div>
         {/each}
     </div>
+
+    <div
+        class="overlay-to-right absolute top-0 left-0 my-auto hidden h-full pl-4 blur sm:block md:pl-8 xl:pl-26 2xl:pl-[25vw]"
+        style="background: linear-gradient(to right, oklch(99.135% 0.00143 285.193), rgba(255, 255, 255, 0) 85%)"
+    ></div>
+    <div
+        class="overlay-to-right absolute top-0 right-0 my-auto hidden h-full pr-4 blur sm:block md:pr-8 xl:pr-26 2xl:pr-[25vw]"
+        style="background: linear-gradient(to left, oklch(99.135% 0.00143 285.193), rgba(255, 255, 255, 0) 85%)"
+    ></div>
 </div>

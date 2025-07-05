@@ -1,9 +1,9 @@
 <script lang="ts">
     import { page } from '$app/state';
-    import { onMount } from 'svelte';
+    import { tick } from 'svelte';
 
-    let playerState = 'UNSTARTED';
-    let player: any;
+    let playerState = $state('UNSTARTED');
+    let player: any = $state(null);
 
     const playerStateChange = ({ data }: any): void => {
         switch (data) {
@@ -33,17 +33,17 @@
     };
 
     const onYouTubeIframeAPIReady = (YT: any): void => {
-        player = new YT.Player('player', {
+        player = new YT.Player('video', {
             height: 'auto',
             width: 'auto',
             videoId: 'm9FmY9KgfG4',
             playerVars: {
+                color: '#4ac63f',
                 list: 'PLT3PaeByruw3yoalfpmGfSFgmMCCSXI61',
                 vq: 'small',
                 mute: 0,
                 playsinline: 0,
                 enablejsapi: 1,
-                rel: 0,
                 iv_load_policy: 3,
                 cc_load_policy: 0,
                 controls: 1,
@@ -51,8 +51,8 @@
                 disablekb: 0,
                 start: 0,
                 showinfo: 0,
-                modestbranding: 1,
-                widget_referrer: page?.url?.origin
+                widget_referrer: page?.url?.origin,
+                origin: page?.url?.origin
             },
             events: {
                 onStateChange: playerStateChange
@@ -65,54 +65,50 @@
         tag.src = 'https://www.youtube.com/iframe_api';
         var firstScriptTag = document.getElementsByTagName('script')[0];
         firstScriptTag?.parentNode?.insertBefore(tag, firstScriptTag);
-
         (window as any).onYouTubeIframeAPIReady = (): void => onYouTubeIframeAPIReady((window as any)?.YT);
     };
 
     const play = (): void => {
-        if (player) {
-            player?.playVideo();
-            if (player?.isMuted) player?.unMute();
-        } else {
-            prepareAPI();
-        }
+        player?.playVideo();
+        if (player?.isMuted) player?.unMute();
     };
 
-    onMount((): void => prepareAPI());
+    $effect.pre((): void => {
+        if (!document.querySelector('script[src="https://www.youtube.com/iframe_api"]')) prepareAPI();
+        tick().then((): void => {
+            onYouTubeIframeAPIReady((window as any)?.YT);
+        });
+    });
 </script>
 
 <div
     class="relative isolate flex aspect-video w-full justify-center overflow-hidden rounded-xl bg-gray-100 sm:rounded-3xl"
 >
     {#if playerState === 'UNSTARTED'}
-        <img class="absolute min-h-auto min-w-full object-cover" src="/corporate-event.webp" alt="" />
-        <button
-            class="absolute inset-0 z-10 flex items-center justify-center"
-            type="button"
-            on:click={(): void => play()}
-            aria-label="Play video"
-            style="background: rgba(0,0,0,0.3);"
-        >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="size-16 cursor-pointer text-white sm:size-26"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-            >
-                <circle cx="12" cy="12" r="10" fill="rgba(0,0,0,0.6)" />
-                <polygon
-                    points="11,9.5 15,12 11,14.5"
-                    fill="white"
-                    stroke="white"
-                    stroke-linejoin="round"
-                    stroke-linecap="round"
-                    stroke-width="2"
-                />
-            </svg>
-        </button>
+        <div class="absolute inset-0 z-10 flex min-h-full min-w-full items-center justify-center bg-[rgba(0,0,0,0.3)]">
+            <button class="inline-flex" type="button" onclick={(): void => play()} aria-label="Play video">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="size-16 cursor-pointer text-white sm:size-26"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <circle cx="12" cy="12" r="10" fill="rgba(0,0,0,0.6)" />
+                    <polygon
+                        points="11,9.5 15,12 11,14.5"
+                        fill="white"
+                        stroke="white"
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                        stroke-width="2"
+                    />
+                </svg>
+            </button>
+        </div>
+        <img class="absolute min-h-auto min-w-full object-cover" src="/corporate-event.webp" alt="Video" />
     {/if}
     <div
-        class="flex aspect-video w-full justify-center rounded-xl bg-gray-100 transition-all duration-300 ease-in-out sm:rounded-3xl"
-        id="player"
+        class="flex aspect-video w-full justify-center rounded-xl transition-all duration-300 ease-in-out sm:rounded-3xl"
+        id="video"
     ></div>
 </div>

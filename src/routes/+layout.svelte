@@ -11,6 +11,9 @@
     const props = $props();
     const { children } = props;
     const { isProduction, brand, logToken } = page.data;
+    let canonical = page.url.href.includes('www')
+        ? page.url.href.replace('www.', '')
+        : page.url.href.replace('https://', 'https://www.');
 
     if (isProduction) {
         injectAnalytics();
@@ -19,7 +22,7 @@
 
     const log = async (): Promise<void> => {
         if (isProduction)
-            await fetch('/log', {
+            await fetch(`${page.url.origin}/api/log`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/vnd+nsmle.dicea+log', Authorization: `Bearer ${logToken}` }
             });
@@ -31,6 +34,9 @@
 </script>
 
 <svelte:head>
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href={`${page.url.origin}/sitemap.xml`} />
+
     <meta name="url" content={page.url.href} />
     <meta name="description" content={brand.description} />
 

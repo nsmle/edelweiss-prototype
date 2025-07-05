@@ -151,7 +151,7 @@
 
 <Hero />
 
-<div class="relative isolate mx-auto pt-20 sm:pt-28">
+<div class="3xl:mt-0 relative isolate mx-auto -mt-[30vh] sm:max-xl:-mt-[40vh] md:-mt-[10vh]">
     <div class="z-10 mx-auto pt-52 pb-12 sm:py-48 lg:py-56">
         <div class="mx-auto flex max-w-7xl px-4 sm:px-8">
             <div class="text-start">
@@ -160,7 +160,9 @@
                 >
                     Booking layanan favorit
                 </h1>
-                <h1 class="text-3xl font-semibold tracking-tight text-balance text-gray-800/90 sm:text-7xl">
+                <h1
+                    class="text-6xl font-semibold tracking-tight text-balance text-gray-800/90 max-xl:text-5xl max-sm:text-3xl"
+                >
                     Layanan favorit
                 </h1>
                 <p class="mt-4 text-sm font-medium text-pretty text-gray-500/95 sm:mt-6 sm:max-w-3xl sm:text-xl/8">
@@ -192,7 +194,9 @@
             >
                 Masih ragu?
             </h1>
-            <h1 class="text-3xl font-semibold tracking-tight text-balance text-gray-800/90 sm:text-6xl">
+            <h1
+                class="text-6xl font-semibold tracking-tight text-balance text-gray-800/90 max-xl:text-5xl max-sm:text-3xl"
+            >
                 Belum yakin layanan mana yang cocok untukmu
             </h1>
             <p class="mt-4 text-sm font-medium text-pretty text-gray-500/95 sm:mt-6 sm:max-w-2xl sm:text-xl/8">
@@ -260,7 +264,9 @@
             >
                 Layanan pilihan
             </h1>
-            <h1 class="text-3xl font-semibold tracking-tight text-balance text-gray-800/90 sm:text-7xl">
+            <h1
+                class="text-6xl font-semibold tracking-tight text-balance text-gray-800/90 max-xl:text-5xl max-sm:text-3xl"
+            >
                 Rekomendasi Layanan
             </h1>
             <p class="mt-4 text-sm font-medium text-pretty text-gray-500/95 sm:mt-6 sm:text-xl/8">
@@ -272,7 +278,6 @@
             <StackRecommendation services={recommendationServices} />
         </div>
     </div>
-
     <div
         class="absolute inset-x-0 top-[calc(100%-13rem)] -z-50 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-22rem)]"
         aria-hidden="true"
@@ -407,7 +412,9 @@
             >
                 Tunggu apa lagi
             </h1>
-            <h1 class="text-3xl font-semibold tracking-tight text-balance text-gray-800/90 sm:text-6xl">
+            <h1
+                class="text-6xl font-semibold tracking-tight text-balance text-gray-800/90 max-xl:text-5xl max-sm:text-3xl"
+            >
                 Pesan Sekarang Juga
             </h1>
             <p
@@ -430,85 +437,6 @@
                     >Pesan Sekarang</a
                 >
             </div>
-
-            <!-- <div class="mt-10 grid grid-cols-1 justify-center gap-6 px-4 sm:mt-14 sm:grid-cols-3 sm:gap-6 sm:p-0">
-                <div
-                    class="sm:mx-none group/card mx-auto max-w-md cursor-context-menu rounded-2xl border border-gray-200 p-6 py-14 shadow-2xl shadow-blue-50/10 transition-all duration-300 ease-in-out hover:rounded-3xl hover:border-transparent hover:bg-white hover:shadow-blue-800/10 sm:max-w-md sm:rounded-3xl sm:p-8 sm:py-16 sm:hover:rounded-4xl"
-                >
-                    <div
-                        class="bg-service-4 group-hover/card:ring-service-4/15 mb-6 inline-flex rounded-2xl p-5 shadow-blue-700/20 transition-all duration-300 ease-in-out group-hover/card:shadow-2xl group-hover/card:ring-8 sm:mb-8 sm:rounded-3xl sm:p-7"
-                    >
-                        <svg
-                            class="size-8 text-gray-100 sm:size-9"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                        >
-                            <path
-                                d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.368 2.371-3 3.739-3a1.5 1.5 0 0 1 0 3h.003ZM11 13H9v7h2v-7Zm-4 0H2v5a2 2 0 0 0 2 2h3v-7Zm6 0v7h3a2 2 0 0 0 2-2v-5h-5Z"
-                            />
-                        </svg>
-                    </div>
-                    <h5 class="text-xl font-semibold tracking-tight text-gray-600 sm:text-2xl">
-                        Kualitas Foto Profesional
-                    </h5>
-                    <p class="mt-3 font-sans text-sm font-medium text-gray-500 sm:text-base">
-                        Menghasilkan foto berkualitas tinggi dengan peralatan profesional dan teknik fotografi yang
-                        dapat diandalkan.
-                    </p>
-                </div>
-                <div
-                    class="sm:mx-none group/card mx-auto max-w-md cursor-context-menu rounded-2xl border border-gray-200 p-6 py-14 shadow-2xl shadow-blue-50/10 transition-all duration-300 ease-in-out hover:rounded-3xl hover:border-transparent hover:bg-white hover:shadow-blue-800/10 sm:max-w-md sm:rounded-3xl sm:p-8 sm:py-16 sm:hover:rounded-4xl"
-                >
-                    <div
-                        class="bg-service-2 group-hover/card:ring-service-2/15 mb-6 inline-flex rounded-2xl p-5 shadow-blue-700/20 transition-all duration-300 ease-in-out group-hover/card:shadow-2xl group-hover/card:ring-8 sm:mb-8 sm:rounded-3xl sm:p-7"
-                    >
-                        <svg
-                            class="size-8 text-gray-100 sm:size-9"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                        >
-                            <path
-                                d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.368 2.371-3 3.739-3a1.5 1.5 0 0 1 0 3h.003ZM11 13H9v7h2v-7Zm-4 0H2v5a2 2 0 0 0 2 2h3v-7Zm6 0v7h3a2 2 0 0 0 2-2v-5h-5Z"
-                            />
-                        </svg>
-                    </div>
-                    <h5 class="text-xl font-semibold tracking-tight text-gray-600 sm:text-2xl">
-                        Cetak Cepat dan Bagikan
-                    </h5>
-                    <p class="mt-3 font-sans text-sm font-medium text-gray-500 sm:text-base">
-                        Menyediakan layanan cetak foto instan dan berbagi digital, sehingga kamu bisa langsung menikmati
-                        hasilnya.
-                    </p>
-                </div>
-                <div
-                    class="sm:mx-none group/card mx-auto max-w-md cursor-context-menu rounded-2xl border border-gray-200 p-6 py-14 shadow-2xl shadow-blue-50/10 transition-all duration-300 ease-in-out hover:rounded-3xl hover:border-transparent hover:bg-white hover:shadow-blue-800/10 sm:max-w-md sm:rounded-3xl sm:p-8 sm:py-16 sm:hover:rounded-4xl"
-                >
-                    <div
-                        class="bg-service-1 group-hover/card:ring-service-1/15 mb-6 inline-flex rounded-2xl p-5 shadow-blue-700/20 transition-all duration-300 ease-in-out group-hover/card:shadow-2xl group-hover/card:ring-8 sm:mb-8 sm:rounded-3xl sm:p-7"
-                    >
-                        <svg
-                            class="size-8 text-gray-100 sm:size-9"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                        >
-                            <path
-                                d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.368 2.371-3 3.739-3a1.5 1.5 0 0 1 0 3h.003ZM11 13H9v7h2v-7Zm-4 0H2v5a2 2 0 0 0 2 2h3v-7Zm6 0v7h3a2 2 0 0 0 2-2v-5h-5Z"
-                            />
-                        </svg>
-                    </div>
-                    <h5 class="text-xl font-semibold tracking-tight text-gray-600 sm:text-2xl">Fleksibilitas Lokasi</h5>
-                    <p class="mt-3 font-sans text-sm font-medium text-gray-500 sm:text-base">
-                        Menyediakan layanan fotografi di berbagai lokasi, baik indoor maupun outdoor, sesuai dengan
-                        kebutuhan acara.
-                    </p>
-                </div>
-            </div> -->
         </div>
     </div>
 

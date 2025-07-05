@@ -7,6 +7,6 @@ export const load: LayoutServerLoad = async (event: LayoutServerLoadEvent): Prom
     return {
         ...layoutData,
         isProduction: isProduction,
-        logToken: getLogMessageToken(event)
+        logToken: isProduction ? getLogMessageToken(event) : null
     } satisfies LayoutData;
 };
