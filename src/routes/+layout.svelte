@@ -35,7 +35,6 @@
 
 <svelte:head>
     <link rel="canonical" href={canonical} />
-    <link rel="sitemap" href={`${page.url.origin}/sitemap.xml`} />
 
     <meta name="url" content={page.url.href} />
     <meta name="description" content={brand.description} />
