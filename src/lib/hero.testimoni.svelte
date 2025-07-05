@@ -86,6 +86,8 @@
                                     class="size-10 rounded-full sm:size-12"
                                     src={testimonials[activeTestimonialIndex].image}
                                     alt={testimonials[activeTestimonialIndex].name}
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
                             <div class="ms-4 min-w-0 flex-1">
@@ -119,6 +121,8 @@
                                 class="size-10 rounded-full sm:size-12"
                                 src={testimonial.image}
                                 alt={testimonial.name}
+                                loading="lazy"
+                                decoding="async"
                             />
                         </div>
                         <div class="ms-3 flex w-full min-w-0 flex-1 flex-col items-start">

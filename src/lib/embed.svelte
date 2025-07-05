@@ -84,10 +84,12 @@
     };
 
     $effect.pre((): void => {
-        if (!document.querySelector('script[src="https://www.youtube.com/iframe_api"]')) prepareAPI();
-        tick().then((): void => {
-            onYouTubeIframeAPIReady((window as any)?.YT);
-        });
+        setTimeout((): void => {
+            if (!document.querySelector('script[src="https://www.youtube.com/iframe_api"]')) prepareAPI();
+            tick().then((): void => {
+                onYouTubeIframeAPIReady((window as any)?.YT);
+            });
+        }, 700);
     });
 </script>
 
@@ -115,7 +117,13 @@
                 </svg>
             </button>
         </div>
-        <img class="absolute min-h-auto min-w-full object-cover" src="/corporate-event.webp" alt="Video" />
+        <img
+            class="absolute min-h-auto min-w-full object-cover"
+            src="/corporate-event.webp"
+            loading="lazy"
+            decoding="async"
+            alt="Video"
+        />
     {/if}
     <div
         class="flex aspect-video w-full justify-center rounded-xl transition-all duration-300 ease-in-out sm:rounded-3xl"

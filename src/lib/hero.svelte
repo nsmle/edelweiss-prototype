@@ -9,6 +9,8 @@
                     src="/hero-image.webp"
                     alt="Beautiful landscape photography backdrop for Edelweiss services"
                     class="h-full w-full object-cover object-[40%_-10vh]"
+                    loading="lazy"
+                    decoding="async"
                 />
             </div>
             <div class="overlay absolute inset-0 h-full w-full rounded-t-2xl"></div>
@@ -52,7 +54,13 @@
                             class="bg-primary-50/60 hover:bg-primary-50 flex w-full cursor-pointer rounded-xl p-2.5 transition-all duration-300 ease-in-out sm:w-auto sm:justify-between sm:bg-transparent sm:px-8 sm:py-4"
                             type="button"
                         >
-                            <img class="size-6 sm:size-8" src="/icon/location.svg" alt="icon" />
+                            <img
+                                class="size-6 sm:size-8"
+                                src="/icon/location.svg"
+                                loading="lazy"
+                                decoding="async"
+                                alt="icon"
+                            />
                             <div class="ml-2.5 flex flex-col">
                                 <p class="text-start text-sm font-semibold text-nowrap sm:text-xl">Lokasi</p>
                                 <span class="text-start text-xs font-medium text-nowrap text-gray-500 sm:text-base"
@@ -64,7 +72,13 @@
                             class="bg-primary-50/60 hover:bg-primary-50 flex w-full cursor-pointer rounded-xl p-2.5 transition-all duration-300 ease-in-out sm:w-auto sm:justify-between sm:bg-transparent sm:px-8 sm:py-4"
                             type="button"
                         >
-                            <img class="size-6 sm:size-8" src="/icon/service.svg" alt="icon" />
+                            <img
+                                class="size-6 sm:size-8"
+                                src="/icon/service.svg"
+                                alt="icon"
+                                loading="lazy"
+                                decoding="async"
+                            />
                             <div class="ml-2.5 flex flex-col">
                                 <p class="text-start text-sm font-semibold text-nowrap sm:text-xl">Layanan</p>
                                 <span class="text-start text-xs font-medium text-nowrap text-gray-500 sm:text-base"
@@ -76,7 +90,13 @@
                             class="bg-primary-50/60 hover:bg-primary-50 flex w-full cursor-pointer rounded-xl p-2.5 transition-all duration-300 ease-in-out sm:w-auto sm:justify-between sm:bg-transparent sm:px-8 sm:py-4"
                             type="button"
                         >
-                            <img class="size-6 sm:size-8" src="/icon/date.svg" alt="icon" />
+                            <img
+                                class="size-6 sm:size-8"
+                                src="/icon/date.svg"
+                                alt="icon"
+                                loading="lazy"
+                                decoding="async"
+                            />
                             <div class="ml-2.5 flex flex-col">
                                 <p class="text-start text-sm font-semibold text-nowrap sm:text-xl">Tanggal</p>
                                 <span class="text-start text-xs font-medium text-nowrap text-gray-500 sm:text-base"

@@ -35,7 +35,9 @@
                     <img
                         class="min-h-64 min-w-64 rounded-t-2xl object-cover sm:min-w-74 sm:rounded-t-3xl"
                         src={service.image}
-                        alt=""
+                        alt={service.name}
+                        loading="lazy"
+                        decoding="async"
                     />
                 </a>
                 <div class="px-2 py-4 text-start">
@@ -63,7 +65,13 @@
                             <b class="font-semibold">{service.order}</b> Pesanan selesai
                         </p>
                         <div class="flex items-center gap-x-1.5">
-                            <img class="size-3 text-green-300 sm:size-3" src="/icon/star.svg" alt="icon" />
+                            <img
+                                class="size-3 text-green-300 sm:size-3"
+                                src="/icon/star.svg"
+                                alt="Start Icon"
+                                loading="lazy"
+                                decoding="async"
+                            />
                             <span class="font-sans text-sm font-semibold tracking-wider text-balance text-gray-500">
                                 {service.rating}</span
                             >

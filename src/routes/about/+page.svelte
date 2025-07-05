@@ -1,17 +1,20 @@
 <script lang="ts">
     import NewsletterForm from '$lib/newsletter.form.svelte';
-    import { onMount } from 'svelte';
 
+    let showMaps = $state(false);
     let isHeroAboutImgWrapperHovered = $state(false);
     let heroAboutImgWrapper: HTMLDivElement;
 
-    onMount(() => {
-        heroAboutImgWrapper.addEventListener('mouseover', () => {
-            isHeroAboutImgWrapperHovered = true;
-        });
-        heroAboutImgWrapper.addEventListener('mouseleave', () => {
-            isHeroAboutImgWrapperHovered = false;
-        });
+    $effect.pre((): void => {
+        setTimeout((): void => {
+            heroAboutImgWrapper.addEventListener('mouseover', () => {
+                isHeroAboutImgWrapperHovered = true;
+            });
+            heroAboutImgWrapper.addEventListener('mouseleave', () => {
+                isHeroAboutImgWrapperHovered = false;
+            });
+            showMaps = true;
+        }, 700);
     });
 </script>
 
@@ -94,6 +97,8 @@
                     alt="Vercel"
                     width="158"
                     height="48"
+                    loading="lazy"
+                    decoding="async"
                 />
             </a>
             <a
@@ -107,6 +112,8 @@
                     alt="Prisma"
                     width="158"
                     height="48"
+                    loading="lazy"
+                    decoding="async"
                 />
             </a>
             <a
@@ -120,6 +127,8 @@
                     alt="Tailwindcss"
                     width="158"
                     height="48"
+                    loading="lazy"
+                    decoding="async"
                 />
             </a>
             <a
@@ -133,6 +142,8 @@
                     alt="SvelteKit"
                     width="158"
                     height="48"
+                    loading="lazy"
+                    decoding="async"
                 />
             </a>
         </div>
@@ -258,15 +269,17 @@
                     class="sm:mx-none group/card xs:min-w-full mx-auto w-full cursor-context-menu rounded-2xl bg-white shadow-2xl shadow-blue-50/60 transition-all duration-300 ease-in-out hover:rounded-3xl hover:bg-white hover:p-1 hover:shadow-blue-800/10 sm:min-w-[70%] sm:rounded-3xl sm:hover:rounded-4xl sm:hover:p-1.5 sm:max-xl:min-w-[60%]"
                 >
                     <div class="h-full w-full">
-                        <iframe
-                            title="Alamat Kami"
-                            class="aspect-video h-full w-full rounded-2xl transition-all duration-300 ease-in-out hover:rounded-3xl sm:rounded-3xl sm:hover:rounded-4xl"
-                            frameborder="0"
-                            scrolling="no"
-                            marginheight="0"
-                            marginwidth="0"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d282.1563363981608!2d110.40959520911656!3d-7.750841079347504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59740a4e0f35%3A0xaf16a3e74e4389cf!2sEdelweissphotostudio!5e1!3m2!1sen!2sus!4v1751709787890!5m2!1sen!2sus"
-                        ></iframe>
+                        {#if showMaps}
+                            <iframe
+                                title="Alamat Kami"
+                                class="aspect-video h-full w-full rounded-2xl transition-all duration-300 ease-in-out hover:rounded-3xl sm:rounded-3xl sm:hover:rounded-4xl"
+                                frameborder="0"
+                                scrolling="no"
+                                marginheight="0"
+                                marginwidth="0"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d282.1563363981608!2d110.40959520911656!3d-7.750841079347504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59740a4e0f35%3A0xaf16a3e74e4389cf!2sEdelweissphotostudio!5e1!3m2!1sen!2sus!4v1751709787890!5m2!1sen!2sus"
+                            ></iframe>
+                        {/if}
                     </div>
                 </div>
             </div>

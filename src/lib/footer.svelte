@@ -139,6 +139,7 @@
                             <button
                                 type="button"
                                 aria-labelledby="Subscribe"
+                                name="Subscribe"
                                 class="absolute end-1.5 bottom-[5px] cursor-pointer rounded-full bg-green-500/70 p-2.5 text-sm font-medium text-white group-active/newsletter:bg-green-500 hover:bg-green-400 focus:ring-4 focus:ring-green-400/10 focus:outline-none disabled:cursor-wait disabled:bg-green-500/50"
                                 disabled={newsletters.loading}
                                 onclick={(e): Promise<void> => subscribe(e.currentTarget)}
