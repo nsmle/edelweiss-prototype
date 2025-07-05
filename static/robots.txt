@@ -1,19 +1,4 @@
 User-agent: *
-Allow: /
-Allow: /service
-Allow: /gallery
-Allow: /about
-Allow: /booking
-Allow: /testimonials
-Allow: /help
-Allow: /terms-and-conditions
-Allow: /privacy-policy
-Allow: /cookie-policy
-Allow: /users/*
-Allow: /logotype/*
-Allow: /icon/*
-Allow: /sitemap.xml
-Allow: /sitemaps.xml
 Disallow:
 
 Sitemap: https://dicea.fun/sitemap.xml
