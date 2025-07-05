@@ -56,9 +56,9 @@ export const layoutData = {
                 label: 'Dukungan',
                 items: [
                     { title: 'Bantuan', url: '/help' },
-                    { title: 'Syarat & Ketentuan', url: '/terms' },
-                    { title: 'Kebijakan Privasi', url: '/privacy' },
-                    { title: 'Kebijakan Cookie', url: '/cookie' },
+                    { title: 'Syarat & Ketentuan', url: '/terms-and-conditions' },
+                    { title: 'Kebijakan Privasi', url: '/privacy-policy' },
+                    { title: 'Kebijakan Cookie', url: '/cookie-policy' },
                     { title: 'Hubungi Kami', url: '/about/#contact-us' }
                 ]
             }
