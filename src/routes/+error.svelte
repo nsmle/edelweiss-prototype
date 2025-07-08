@@ -6,7 +6,7 @@
     <title>{page?.error?.message || 'Page not found'} - Edelweiss Photobooth</title>
 </svelte:head>
 
-<div class="bg-[oklch(99.135% 0.00143 285.193)] relative isolate -mb-[13%] flex min-h-screen w-full">
+<div class="bg-[oklch(99.135% 0.00143 285.193)] relative isolate -mb-[10%] flex min-h-screen w-full">
     <div class="absolute inset-x-0 -top-40 -z-40 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
         <div
             class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#9089fc] to-[#c7f0c2] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"

@@ -272,7 +272,7 @@
                         {#if showMaps}
                             <iframe
                                 title="Alamat Kami"
-                                class="aspect-video h-full w-full rounded-2xl transition-all duration-300 ease-in-out hover:rounded-3xl sm:rounded-3xl sm:hover:rounded-4xl"
+                                class="relative aspect-video h-full w-full rounded-2xl transition-all duration-300 ease-in-out hover:rounded-3xl sm:rounded-3xl sm:hover:rounded-4xl"
                                 frameborder="0"
                                 scrolling="no"
                                 marginheight="0"

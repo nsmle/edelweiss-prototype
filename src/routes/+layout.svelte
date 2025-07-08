@@ -1,6 +1,7 @@
 <script lang="ts">
     import { afterNavigate } from '$app/navigation';
     import { page } from '$app/state';
+    import AiWidget from '$lib/ai-widget.svelte';
     import Footer from '$lib/footer.svelte';
     import Header from '$lib/header.svelte';
     import { injectAnalytics } from '@vercel/analytics/sveltekit';
@@ -63,3 +64,5 @@
 </main>
 
 <Footer />
+
+<AiWidget />

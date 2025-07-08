@@ -31,7 +31,7 @@
 
 <svelte:window bind:scrollY={y} />
 
-<header class={`fixed z-50 w-full ${headerClass} transition-all duration-300 ease-in-out`}>
+<header class={`fixed z-30 w-full ${headerClass} transition-all duration-300 ease-in-out`}>
     <!-- Desktop Navigation -->
     <Nav padding={navStyle} scrollY={y} navigations={header.navigations} />
 

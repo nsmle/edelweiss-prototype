@@ -10,6 +10,8 @@
 
 @theme inline {
     --color-canvas: var(--acme-canvas-color);
+    /* --shadow-widget: 0px -5px 80px oklch(85.3% 0.214 259.815 / 0.3); */
+    --shadow-widget: 0px -10px 80px oklch(55.1% 0.027 264.364 / 0.4);
 
     --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
     --font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
@@ -21,6 +23,7 @@
     --font-inter: 'Inter', sans-serif;
 
     --color-clean-500: oklch(99.135% 0.00143 285.193);
+    --color-clean-100: oklch(97% 0.003 285.193);
 
     --color-primary-50: #f3fbf2;
     --color-primary-100: #e3f8e0;
@@ -104,4 +107,20 @@ body {
 
 .aspect-potrait {
     aspect-ratio: 9 / 16;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-green-100);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-green-500);
+    border: 1px solid var(--color-green-100);
+    border-radius: 400px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
 }

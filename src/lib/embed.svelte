@@ -51,11 +51,12 @@
                 cc_load_policy: 0,
                 controls: 1,
                 index: 1,
-                fs: 0,
+                fs: 1,
                 disablekb: 0,
                 start: 0,
                 showinfo: 0,
                 loop: 1,
+                modestbranding: 1,
                 widget_referrer: page?.url?.origin,
                 origin: page?.url?.origin
             },
