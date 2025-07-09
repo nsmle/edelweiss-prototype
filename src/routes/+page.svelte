@@ -5,7 +5,6 @@
     import StackFavorite from '$lib/stack.favorite.svelte';
     import StackRecommendation from '$lib/stack.recommendation.svelte';
     import type { PageData } from './$types';
-    import { page } from '$app/state';
 
     export let data: PageData;
 

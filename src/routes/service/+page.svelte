@@ -105,7 +105,7 @@
                 Services
             </h1>
             <span
-                class="mt-1 font-sans text-sm font-medium tracking-normal text-gray-500 sm:mt-2 sm:max-w-2xl sm:text-xl"
+                class="mt-2 font-sans text-sm font-medium tracking-normal text-gray-500 sm:mt-4 sm:max-w-2xl sm:text-xl"
             >
                 Pilih layanan terbaik mu.
             </span>
@@ -125,7 +125,7 @@
 
 <div class="relative isolate flex w-full items-center px-4" id="services">
     <div class="relative isolate flex w-full flex-col items-center overflow-hidden">
-        <div class="mx-auto mt-6 flex w-full max-w-7xl flex-col gap-6 gap-x-3 pb-8 sm:py-8 md:px-6 lg:px-8">
+        <div class="mx-auto mt-6 flex w-full max-w-7xl flex-col gap-6 gap-x-3 pb-8 sm:py-8 md:px-6 lg:px-6">
             {#each services as service, index (index)}
                 {@const discountPct = calcDiscountPct(service.priceNormal, service.price)}
                 <div

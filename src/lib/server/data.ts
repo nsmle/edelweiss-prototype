@@ -26,7 +26,7 @@ export const layoutData = {
             }
             // {
             //     title: 'Testimoni',
-            //     url: '/testimonials'
+            //     url: '/testimoni'
             // }
         ]
     },
@@ -45,7 +45,7 @@ export const layoutData = {
             {
                 label: 'Tentang Kami',
                 items: [
-                    { title: 'Testimoni', url: '/testimonials' },
+                    { title: 'Testimoni', url: '/testimoni' },
                     { title: 'Berita', url: '/about/#news' },
                     { title: 'Kontak Kami', url: '/about/#contact' },
                     { title: 'Kisah Kami', url: '/about/#stories' },
