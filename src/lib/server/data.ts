@@ -23,11 +23,11 @@ export const layoutData = {
             {
                 title: 'Tentang Kami',
                 url: '/about'
-            },
-            {
-                title: 'Testimoni',
-                url: '/testimonials'
             }
+            // {
+            //     title: 'Testimoni',
+            //     url: '/testimonials'
+            // }
         ]
     },
     footer: {

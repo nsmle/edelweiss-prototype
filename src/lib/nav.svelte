@@ -11,17 +11,17 @@
 </script>
 
 <nav
-    class={`mx-auto hidden max-w-7xl items-center justify-between sm:flex ${props?.padding} transition-all duration-300 ease-in-out`}
+    class={`mx-auto hidden max-w-7xl items-center justify-between lg:flex ${props?.padding} transition-all duration-300 ease-in-out`}
     aria-label="Global"
 >
     <div class="flex lg:flex-1">
         <Brand />
     </div>
-    <div class="flex items-center lg:flex lg:gap-x-12">
+    <div class="flex items-center md:gap-6 lg:flex lg:gap-x-12">
         {#each navigations as navigation}
             <a
                 href={navigation.url}
-                class={`font-poppins text-sm/6 font-semibold ${isActivePage(navigation.url) ? 'text-primary-500' : 'text-gray-800'}`}
+                class={`font-poppins text-sm/6 font-semibold ${isActivePage(navigation.url) ? 'text-green-500' : 'text-gray-800'}`}
                 >{navigation.title}</a
             >
         {/each}

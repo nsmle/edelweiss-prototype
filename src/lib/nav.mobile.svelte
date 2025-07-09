@@ -20,9 +20,9 @@
     });
 </script>
 
-<div class="flex w-full sm:hidden">
+<div class="flex w-full lg:hidden">
     <div
-        class={`block w-full min-w-full overflow-y-auto transition-all duration-300 ease-in-out sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 ${props?.padding}`}
+        class={`block w-full min-w-full overflow-y-auto transition-all duration-300 ease-in-out ${props?.padding}`}
         class:z-50={isHeaderShow}
         class:fixed={isHeaderShow}
         class:min-h-screen={isHeaderShow}
